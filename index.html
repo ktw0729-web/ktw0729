@@ -348,6 +348,28 @@
     letter-spacing: 0.05em;
   }
 
+  .task-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .task-item:last-child { border-bottom: none; }
+  .task-time {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-sky);
+    flex: 0 0 auto;
+    min-width: 48px;
+  }
+  .task-title {
+    font-size: 14px;
+    color: var(--ink);
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+
   footer {
     text-align: center;
     margin-top: 40px;
@@ -382,6 +404,22 @@
         </button>
       </div>
     </div>
+  </div>
+
+  <!-- TODAY'S TASKS (calendar ICS feed) -->
+  <div class="panel" style="margin-bottom:24px;">
+    <p class="panel-label">오늘의 할일 <span id="calLinkToggle" style="cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔗 캘린더 연동</span></p>
+
+    <div class="city-search" id="calSettingsRow" style="display:none;">
+      <input type="text" id="calUrlInput" placeholder="캘린더 iCal(.ics) 주소를 붙여넣으세요" autocomplete="off" />
+      <button id="calUrlSave">저장</button>
+    </div>
+    <div id="calSettingsHelp" style="display:none; font-size:11px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; margin:-8px 0 14px; line-height:1.5;">
+      구글 캘린더 기준: 캘린더 설정 → 원하는 캘린더 선택 → "캘린더 통합" → <b>비공개 주소(iCal 형식)</b> 복사 후 붙여넣기.
+    </div>
+
+    <div id="taskList" style="display:flex; flex-direction:column; gap:8px;"></div>
+    <div class="sample-note" id="calNote">🔗 캘린더 미연동 · <span id="calUpdated">위 "🔗 캘린더 연동"을 눌러 등록해 주세요.</span></div>
   </div>
 
   <div class="grid">
@@ -482,6 +520,150 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
+// Shared CORS proxy fallbacks, used by the calendar, weather, and news sections below
+// whenever a direct browser fetch to a third-party API is blocked by missing CORS headers.
+const CORS_PROXIES = [
+  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+];
+
+/* ---------------- TODAY'S TASKS (calendar ICS feed) ---------------- */
+// Reads a calendar's public/secret iCal (.ics) feed URL — works with Google Calendar,
+// Outlook, Apple Calendar, or any calendar app that can export a "secret address in
+// iCal format". No OAuth needed, but most calendar providers don't set CORS headers on
+// their .ics endpoints, so a public CORS proxy is used as a fallback, same as elsewhere
+// on this page.
+const CAL_URL_STORAGE = 'ics_calendar_url';
+function getCalUrl() { return localStorage.getItem(CAL_URL_STORAGE) || ''; }
+function setCalUrl(u) { localStorage.setItem(CAL_URL_STORAGE, u.trim()); }
+
+const calSettingsRow = document.getElementById('calSettingsRow');
+const calSettingsHelp = document.getElementById('calSettingsHelp');
+const calUrlInput = document.getElementById('calUrlInput');
+const calNoteEl = document.getElementById('calNote');
+const calUpdatedEl = document.getElementById('calUpdated');
+const taskListEl = document.getElementById('taskList');
+
+function toggleCalSettingsRow(forceOpen) {
+  const shouldOpen = forceOpen !== undefined ? forceOpen : calSettingsRow.style.display === 'none';
+  calSettingsRow.style.display = shouldOpen ? 'flex' : 'none';
+  calSettingsHelp.style.display = shouldOpen ? 'block' : 'none';
+  if (shouldOpen) calUrlInput.value = getCalUrl();
+}
+document.getElementById('calLinkToggle').addEventListener('click', () => toggleCalSettingsRow());
+document.getElementById('calUrlSave').addEventListener('click', saveCalUrl);
+calUrlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveCalUrl(); });
+function saveCalUrl() {
+  const v = calUrlInput.value.trim();
+  if (!v) return;
+  setCalUrl(v);
+  toggleCalSettingsRow(false);
+  renderTasks();
+}
+if (!getCalUrl()) toggleCalSettingsRow(true);
+
+async function fetchTextWithCorsFallback(url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP_' + res.status);
+    return await res.text();
+  } catch (directErr) {
+    for (const buildProxyUrl of CORS_PROXIES) {
+      try {
+        const res = await fetch(buildProxyUrl(url));
+        if (!res.ok) continue;
+        return await res.text();
+      } catch (proxyErr) { /* try next proxy */ }
+    }
+    throw new Error('FETCH_FAILED');
+  }
+}
+
+function icsDateToJSDate(val) {
+  const m = val.match(/^(\d{4})(\d{2})(\d{2})(?:T(\d{2})(\d{2})(\d{2})(Z)?)?$/);
+  if (!m) return null;
+  const [, y, mo, d, hh, mi, ss, z] = m;
+  if (hh === undefined) return new Date(`${y}-${mo}-${d}T00:00:00`);
+  return new Date(`${y}-${mo}-${d}T${hh}:${mi}:${ss}${z ? 'Z' : ''}`);
+}
+
+function parseICS(text) {
+  const unfolded = text.replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '');
+  const blocks = unfolded.split('BEGIN:VEVENT').slice(1);
+  const events = [];
+  blocks.forEach(block => {
+    const body = block.slice(0, block.indexOf('END:VEVENT'));
+    const lines = body.split(/\r\n|\n/);
+    let summary = '', dtstartRaw = '', dtendRaw = '', allDay = false;
+    lines.forEach(line => {
+      const idx = line.indexOf(':');
+      if (idx === -1) return;
+      const key = line.slice(0, idx);
+      const val = line.slice(idx + 1).trim();
+      if (key.startsWith('SUMMARY')) summary = val;
+      else if (key.startsWith('DTSTART')) { dtstartRaw = val; if (/^\d{8}$/.test(val)) allDay = true; }
+      else if (key.startsWith('DTEND')) dtendRaw = val;
+    });
+    if (!summary || !dtstartRaw) return;
+    const start = icsDateToJSDate(dtstartRaw);
+    const end = dtendRaw ? icsDateToJSDate(dtendRaw) : null;
+    if (!start) return;
+    events.push({ summary, start, end, allDay });
+  });
+  return events;
+}
+
+function isSameLocalDay(a, b) {
+  return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+}
+
+function renderTaskItems(events) {
+  const today = new Date();
+  const todays = events.filter(ev => {
+    if (ev.allDay && ev.end) {
+      // ICS all-day DTEND is exclusive (the day after the event ends)
+      return today >= new Date(ev.start.getFullYear(), ev.start.getMonth(), ev.start.getDate()) &&
+             today < new Date(ev.end.getFullYear(), ev.end.getMonth(), ev.end.getDate());
+    }
+    return isSameLocalDay(ev.start, today);
+  }).sort((a, b) => a.start - b.start);
+
+  taskListEl.innerHTML = '';
+  if (!todays.length) {
+    taskListEl.innerHTML = '<div style="color:var(--ink-soft); font-size:13px;">오늘 등록된 일정이 없습니다.</div>';
+    return;
+  }
+  todays.forEach(ev => {
+    const timeLabel = ev.allDay ? '종일' : `${String(ev.start.getHours()).padStart(2,'0')}:${String(ev.start.getMinutes()).padStart(2,'0')}`;
+    const div = document.createElement('div');
+    div.className = 'task-item';
+    div.innerHTML = `<span class="task-time">${timeLabel}</span><span class="task-title">${ev.summary}</span>`;
+    taskListEl.appendChild(div);
+  });
+}
+
+async function renderTasks() {
+  const url = getCalUrl();
+  if (!url) {
+    calUpdatedEl.textContent = '위 "🔗 캘린더 연동"을 눌러 등록해 주세요.';
+    taskListEl.innerHTML = '';
+    return;
+  }
+  calUpdatedEl.textContent = '불러오는 중...';
+  try {
+    const text = await fetchTextWithCorsFallback(url);
+    const events = parseICS(text);
+    renderTaskItems(events);
+    const now = new Date();
+    calUpdatedEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} 기준`;
+  } catch (err) {
+    console.error('[calendar]', err);
+    calUpdatedEl.textContent = '캘린더를 불러오지 못했습니다. 주소가 올바른지 확인해 주세요.';
+  }
+}
+renderTasks();
+setInterval(renderTasks, 10 * 60 * 1000);
+
 /* ---------------- WEATHER (LIVE: OpenWeatherMap — most widely used weather API worldwide) ---------------- */
 // OpenWeatherMap requires a free personal API key (no credit card) from https://openweathermap.org/api
 // Free tier: 60 calls/min, 1,000,000 calls/month — plenty for a personal start page.
@@ -540,11 +722,6 @@ function aqiToLabel(aqi) {
   // OpenWeatherMap Air Pollution API uses a 1(good)-5(very poor) scale
   return { 1: '좋음', 2: '양호', 3: '보통', 4: '나쁨', 5: '매우 나쁨' }[aqi] || '-';
 }
-
-const CORS_PROXIES = [
-  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
-];
 
 async function owmFetch(path, params) {
   const key = getOwmKey();
