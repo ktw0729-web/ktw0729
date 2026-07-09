@@ -521,7 +521,12 @@ setInterval(tick, 1000);
 // The key is stored only in this browser's localStorage; it is never sent anywhere but OpenWeatherMap.
 
 const OWM_KEY_STORAGE = 'owm_api_key';
-function getOwmKey() { return localStorage.getItem(OWM_KEY_STORAGE) || ''; }
+// Default key so the page works out of the box in any browser without re-entering it.
+// Since this file is hosted in a public GitHub repo, this key is visible to anyone who
+// views the page source — acceptable for a free-tier weather key with no billing risk,
+// but worth knowing.
+const DEFAULT_OWM_KEY = 'bd42af82afe19438390cf1b3cc4902d4';
+function getOwmKey() { return localStorage.getItem(OWM_KEY_STORAGE) || DEFAULT_OWM_KEY; }
 function setOwmKey(k) { localStorage.setItem(OWM_KEY_STORAGE, k.trim()); }
 
 const owmKeyRow = document.getElementById('owmKeyRow');
