@@ -387,7 +387,7 @@
   <div class="grid">
     <!-- WEATHER PANEL -->
     <div class="panel">
-      <p class="panel-label">날씨 <span id="owmKeyLink" style="cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔑 API 키 설정</span></p>
+      <p class="panel-label">날씨 <span id="owmKeyLink" style="display:none; cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔑 API 키 설정</span></p>
 
       <div class="city-search" id="owmKeyRow" style="display:none;">
         <input type="text" id="owmKeyInput" placeholder="OpenWeatherMap API 키를 붙여넣으세요" autocomplete="off" />
@@ -724,13 +724,14 @@ async function renderWeather(cityName) {
       if (!loc) { weatherUpdatedEl.textContent = `"${cityName}" 지역을 찾지 못했습니다.`; document.getElementById('weatherCity').textContent = '검색 실패'; return; }
       const bundle = await fetchWeatherBundle({ lat: loc.lat, lon: loc.lon });
       renderWeatherBundle(bundle, loc.name);
-      localStorage.setItem('homepage_city', cityName);
-      localStorage.removeItem('homepage_use_geo');
+      document.getElementById('cityInput').value = loc.name;
+      lastQuery = { type: 'city', value: cityName };
     } else {
       const pos = await getBrowserLocation();
       const bundle = await fetchWeatherBundle({ lat: pos.lat, lon: pos.lon });
       renderWeatherBundle(bundle);
-      localStorage.setItem('homepage_use_geo', '1');
+      document.getElementById('cityInput').value = bundle.current.name || '';
+      lastQuery = { type: 'geo' };
     }
   } catch (err) {
     console.error('[weather]', err);
@@ -765,18 +766,14 @@ function doSearch() {
   renderWeather(v);
 }
 
-// initial load: prefer last-used geolocation, else last-searched city, else ask for location
-document.getElementById('cityInput').value = localStorage.getItem('homepage_city') || '';
-if (localStorage.getItem('homepage_use_geo') === '1' || !localStorage.getItem('homepage_city')) {
-  renderWeather();
-} else {
-  renderWeather(localStorage.getItem('homepage_city'));
-}
+// Default is always the browser's current location on every page load.
+let lastQuery = { type: 'geo' };
+renderWeather();
 
-// refresh every 10 minutes using whichever mode was last used
+// refresh every 10 minutes using whichever mode was last used in this session
 setInterval(() => {
-  if (localStorage.getItem('homepage_use_geo') === '1') renderWeather();
-  else renderWeather(localStorage.getItem('homepage_city') || '');
+  if (lastQuery.type === 'city') renderWeather(lastQuery.value);
+  else renderWeather();
 }, 10 * 60 * 1000);
 
 /* ---------------- NEWS (LIVE: Google News RSS via CORS proxy, no API key required) ---------------- */
