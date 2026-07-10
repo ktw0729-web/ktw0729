@@ -575,34 +575,49 @@ function looksLikeICS(text) {
   return typeof text === 'string' && text.indexOf('BEGIN:VCALENDAR') !== -1;
 }
 
-// Returns the raw .ics text, or throws an Error whose .code explains what went wrong:
-//   BAD_URL          – the saved address isn't a valid http(s) URL
-//   ALL_PROXIES_FAILED – every proxy (and the direct attempt) failed to respond
-//   NOT_ICS          – something responded, but it wasn't a calendar feed
+// Ordered list of ways to fetch the .ics. Each is tried until one returns real calendar data.
+// "json:true" sources wrap the payload as {contents:"..."} and need unwrapping.
+const CAL_SOURCES = [
+  { name: '직접',        build: (u) => u,                                                              json: false },
+  { name: 'allorigins',  build: (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,   json: false },
+  { name: 'allorigins2', build: (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,    json: true  },
+  { name: 'codetabs',    build: (u) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(u)}`, json: false },
+  { name: 'corsproxy',   build: (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,             json: false },
+  { name: 'x2u',         build: (u) => `https://cors.x2u.in/${u}`,                                        json: false },
+];
+
+// Returns { text } with the raw .ics on success, or throws an Error carrying:
+//   .code   – BAD_URL | NOT_ICS | ALL_PROXIES_FAILED
+//   .diag   – short per-source outcome string, e.g. "직접:err · allorigins:429 · codetabs:ok✗"
 async function fetchICSText(rawUrl) {
   const url = normalizeCalUrl(rawUrl);
   if (!/^https?:\/\//i.test(url)) {
     const e = new Error('bad url'); e.code = 'BAD_URL'; throw e;
   }
 
+  const log = [];
   let reachedSomething = false;
 
-  // 1) direct attempt (works if the calendar host happens to send CORS headers)
-  // 2) each proxy in turn
-  const attempts = [ (u) => u, ...CORS_PROXIES ];
-  for (const build of attempts) {
+  for (const src of CAL_SOURCES) {
     try {
-      const res = await fetch(build(url));
-      if (!res.ok) continue;
-      const text = await res.text();
+      const res = await fetch(src.build(url));
+      if (!res.ok) { log.push(`${src.name}:${res.status}`); continue; }
       reachedSomething = true;
-      if (looksLikeICS(text)) return text;
-      // got a response, but it's an error page / not a calendar — try the next source
-    } catch (err) { /* network/CORS error on this source; try the next */ }
+      let text = await res.text();
+      if (src.json) {
+        try { text = (JSON.parse(text).contents) || ''; } catch (_) { text = ''; }
+      }
+      if (looksLikeICS(text)) { log.push(`${src.name}:ok✓`); console.log('[calendar] source used:', src.name, '·', log.join(' · ')); return { text }; }
+      log.push(`${src.name}:ok✗`); // responded, but not a calendar feed
+    } catch (err) {
+      log.push(`${src.name}:err`); // network/CORS/blocked
+    }
   }
 
+  console.error('[calendar] all sources failed →', log.join(' · '));
   const e = new Error('fetch failed');
   e.code = reachedSomething ? 'NOT_ICS' : 'ALL_PROXIES_FAILED';
+  e.diag = log.join(' · ');
   throw e;
 }
 
@@ -700,21 +715,26 @@ async function renderTasks() {
   }
   calUpdatedEl.textContent = '불러오는 중...';
   try {
-    const text = await fetchICSText(url);
+    const { text } = await fetchICSText(url);
     const events = parseICS(text);
     renderTaskItems(events);
     const now = new Date();
     calUpdatedEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} 기준`;
   } catch (err) {
     console.error('[calendar]', err);
-    taskListEl.innerHTML = '';
+    let msg;
     if (err.code === 'BAD_URL') {
-      calUpdatedEl.textContent = '주소 형식이 올바르지 않아요. "https://…/basic.ics" 형태의 iCal 비공개 주소인지 확인해 주세요.';
+      msg = '주소 형식이 올바르지 않아요. "https://…/basic.ics" 형태의 iCal 비공개 주소인지 확인해 주세요.';
     } else if (err.code === 'NOT_ICS') {
-      calUpdatedEl.textContent = '주소는 열렸지만 캘린더 데이터가 아니에요. "공개"가 아닌 "iCal 형식의 비공개 주소"를 붙여넣었는지, 주소가 중간에 잘리지 않았는지 확인해 주세요.';
+      msg = '주소는 열렸지만 캘린더 데이터가 아니에요. "공개"가 아닌 "iCal 형식의 비공개 주소"인지, 주소가 중간에 잘리지 않았는지 확인해 주세요.';
     } else {
-      calUpdatedEl.textContent = '연동 서버(프록시)가 일시적으로 응답하지 않아요. 잠시 후 새로고침하면 대부분 해결돼요.';
+      msg = '연동 서버(프록시)들이 모두 응답하지 않았어요. 아래 진단을 확인해 주세요.';
     }
+    calUpdatedEl.textContent = msg;
+    // Show the per-source diagnostic right on the page so it can be read without a console (mobile-friendly).
+    taskListEl.innerHTML = err.diag
+      ? `<div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); line-height:1.7; word-break:break-all;">진단: ${err.diag}<br><span style="color:var(--accent-sun);">숫자=거부(예:403/429) · err=차단/네트워크 · ok✗=응답했지만 캘린더 아님</span></div>`
+      : '';
   }
 }
 renderTasks();
