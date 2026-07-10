@@ -408,7 +408,7 @@
 
   <!-- TODAY'S TASKS (calendar ICS feed) -->
   <div class="panel" style="margin-bottom:24px;">
-    <p class="panel-label">오늘의 할일 <span id="calLinkToggle" style="cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔗 캘린더 연동</span></p>
+    <p class="panel-label">일정관리 <span id="calLinkToggle" style="cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔗 캘린더 연동</span></p>
 
     <div class="city-search" id="calSettingsRow" style="display:none;">
       <input type="text" id="calUrlInput" placeholder="캘린더 iCal(.ics) 주소를 붙여넣으세요" autocomplete="off" />
@@ -644,29 +644,51 @@ function isSameLocalDay(a, b) {
   return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 }
 
-function renderTaskItems(events) {
-  const today = new Date();
-  const todays = events.filter(ev => {
+function eventsForDay(events, day) {
+  const dayStart = new Date(day.getFullYear(), day.getMonth(), day.getDate());
+  return events.filter(ev => {
     if (ev.allDay && ev.end) {
       // ICS all-day DTEND is exclusive (the day after the event ends)
-      return today >= new Date(ev.start.getFullYear(), ev.start.getMonth(), ev.start.getDate()) &&
-             today < new Date(ev.end.getFullYear(), ev.end.getMonth(), ev.end.getDate());
+      return dayStart >= new Date(ev.start.getFullYear(), ev.start.getMonth(), ev.start.getDate()) &&
+             dayStart < new Date(ev.end.getFullYear(), ev.end.getMonth(), ev.end.getDate());
     }
-    return isSameLocalDay(ev.start, today);
+    return isSameLocalDay(ev.start, day);
   }).sort((a, b) => a.start - b.start);
+}
+
+function renderTaskGroup(title, dayEvents) {
+  const wrap = document.createElement('div');
+
+  const heading = document.createElement('div');
+  heading.textContent = title;
+  heading.style.cssText = "font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent-sky); text-transform:uppercase; letter-spacing:0.06em; margin:0 0 6px;";
+  wrap.appendChild(heading);
+
+  if (!dayEvents.length) {
+    const empty = document.createElement('div');
+    empty.style.cssText = 'color:var(--ink-soft); font-size:13px; padding:2px 0 4px;';
+    empty.textContent = '등록된 일정이 없습니다.';
+    wrap.appendChild(empty);
+  } else {
+    dayEvents.forEach(ev => {
+      const timeLabel = ev.allDay ? '종일' : `${String(ev.start.getHours()).padStart(2,'0')}:${String(ev.start.getMinutes()).padStart(2,'0')}`;
+      const div = document.createElement('div');
+      div.className = 'task-item';
+      div.innerHTML = `<span class="task-time">${timeLabel}</span><span class="task-title">${ev.summary}</span>`;
+      wrap.appendChild(div);
+    });
+  }
+  return wrap;
+}
+
+function renderTaskItems(events) {
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
 
   taskListEl.innerHTML = '';
-  if (!todays.length) {
-    taskListEl.innerHTML = '<div style="color:var(--ink-soft); font-size:13px;">오늘 등록된 일정이 없습니다.</div>';
-    return;
-  }
-  todays.forEach(ev => {
-    const timeLabel = ev.allDay ? '종일' : `${String(ev.start.getHours()).padStart(2,'0')}:${String(ev.start.getMinutes()).padStart(2,'0')}`;
-    const div = document.createElement('div');
-    div.className = 'task-item';
-    div.innerHTML = `<span class="task-time">${timeLabel}</span><span class="task-title">${ev.summary}</span>`;
-    taskListEl.appendChild(div);
-  });
+  taskListEl.appendChild(renderTaskGroup('오늘 할일', eventsForDay(events, today)));
+  taskListEl.appendChild(renderTaskGroup('내일 할일', eventsForDay(events, tomorrow)));
 }
 
 async function renderTasks() {
