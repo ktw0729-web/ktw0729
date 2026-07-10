@@ -1032,7 +1032,7 @@ setInterval(() => {
 /* ---------------- NEWS (LIVE: Google News RSS via CORS proxy, no API key required) ---------------- */
 // Google News publishes public RSS feeds but does not set CORS headers for direct browser fetch,
 // so a lightweight public CORS proxy is used to relay the XML to the browser.
-// If a proxy is ever down, the code automatically tries the next one in PROXIES.
+// If a source is ever down, the code automatically tries the next one in CAL_SOURCES.
 
 const newsCategories = {
   '속보': 'https://news.google.com/rss/search?q=속보+when:6h&hl=ko&gl=KR&ceid=KR:ko',
@@ -1041,10 +1041,8 @@ const newsCategories = {
   'IT': 'https://news.google.com/rss/search?q=IT+기술&hl=ko&gl=KR&ceid=KR:ko',
   '스포츠': 'https://news.google.com/rss/search?q=스포츠&hl=ko&gl=KR&ceid=KR:ko',
 };
-const PROXIES = [
-  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
-];
+// News reuses the same robust multi-source list as the calendar (CAL_SOURCES),
+// so it gets the same fallbacks and on-page diagnostics.
 
 const tabsEl = document.getElementById('newsTabs');
 const listEl = document.getElementById('newsList');
@@ -1062,31 +1060,45 @@ function timeAgo(pubDateStr) {
   return `${Math.floor(hrs / 24)}일 전`;
 }
 
+function looksLikeRSS(text) {
+  return typeof text === 'string' &&
+    (text.indexOf('<item') !== -1 || text.indexOf('<rss') !== -1 || text.indexOf('<feed') !== -1);
+}
+
 async function fetchNewsCategory(cat) {
   const targetUrl = newsCategories[cat];
-  let lastErr;
-  for (const buildProxyUrl of PROXIES) {
+  const log = [];
+  let reached = false;
+  for (const src of CAL_SOURCES) {
     try {
-      const res = await fetch(buildProxyUrl(targetUrl));
-      if (!res.ok) throw new Error('proxy fetch failed');
-      const xmlText = await res.text();
+      const res = await fetch(src.build(targetUrl));
+      if (!res.ok) { log.push(`${src.name}:${res.status}`); continue; }
+      reached = true;
+      let xmlText = await res.text();
+      if (src.json) { try { xmlText = JSON.parse(xmlText).contents || ''; } catch (_) { xmlText = ''; } }
+      if (!looksLikeRSS(xmlText)) { log.push(`${src.name}:ok✗`); continue; }
       const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
       const items = [...xml.querySelectorAll('item')].slice(0, 8).map(item => {
         const rawTitle = item.querySelector('title')?.textContent || '';
         // Google News titles are formatted "headline - source name"
         const parts = rawTitle.split(' - ');
-        const src = parts.length > 1 ? parts.pop() : (item.querySelector('source')?.textContent || 'Google 뉴스');
+        const source = parts.length > 1 ? parts.pop() : (item.querySelector('source')?.textContent || 'Google 뉴스');
         const headline = parts.join(' - ');
         const link = item.querySelector('link')?.textContent || '#';
         const pubDate = item.querySelector('pubDate')?.textContent || '';
-        return { h: headline, src, link, t: pubDate ? timeAgo(pubDate) : '' };
+        return { h: headline, src: source, link, t: pubDate ? timeAgo(pubDate) : '' };
       });
+      log.push(`${src.name}:ok✓`);
+      console.log('[news] source used:', src.name, '·', log.join(' · '));
       return items;
     } catch (err) {
-      lastErr = err;
+      log.push(`${src.name}:err`);
     }
   }
-  throw lastErr || new Error('all proxies failed');
+  console.error('[news] all sources failed →', log.join(' · '));
+  const e = new Error('all sources failed');
+  e.diag = log.join(' · ');
+  throw e;
 }
 
 async function renderNews() {
@@ -1116,7 +1128,11 @@ async function renderNews() {
     const now = new Date();
     newsUpdatedEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} 기준`;
   } catch (err) {
-    newsUpdatedEl.textContent = '뉴스를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.';
+    console.error('[news]', err);
+    newsUpdatedEl.textContent = '뉴스를 불러오지 못했습니다.';
+    listEl.innerHTML = err.diag
+      ? `<div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); line-height:1.7; word-break:break-all;">진단: ${err.diag}<br><span style="color:var(--accent-sun);">숫자=거부(예:403/429) · err=차단/네트워크 · ok✗=응답했지만 뉴스형식 아님</span></div>`
+      : '';
   }
 }
 
