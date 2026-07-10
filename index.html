@@ -524,7 +524,9 @@ setInterval(tick, 1000);
 // whenever a direct browser fetch to a third-party API is blocked by missing CORS headers.
 const CORS_PROXIES = [
   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  (url) => `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(url)}`,
   (url) => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+  (url) => `https://thingproxy.freeboard.io/fetch/${url}`,
 ];
 
 /* ---------------- TODAY'S TASKS (calendar ICS feed) ---------------- */
@@ -562,21 +564,46 @@ function saveCalUrl() {
 }
 if (!getCalUrl()) toggleCalSettingsRow(true);
 
-async function fetchTextWithCorsFallback(url) {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('HTTP_' + res.status);
-    return await res.text();
-  } catch (directErr) {
-    for (const buildProxyUrl of CORS_PROXIES) {
-      try {
-        const res = await fetch(buildProxyUrl(url));
-        if (!res.ok) continue;
-        return await res.text();
-      } catch (proxyErr) { /* try next proxy */ }
-    }
-    throw new Error('FETCH_FAILED');
+function normalizeCalUrl(raw) {
+  let u = (raw || '').trim();
+  // Some calendar apps (Apple/iCloud) hand out webcal:// links; fetch() can't use those.
+  if (u.startsWith('webcal://')) u = 'https://' + u.slice('webcal://'.length);
+  return u;
+}
+
+function looksLikeICS(text) {
+  return typeof text === 'string' && text.indexOf('BEGIN:VCALENDAR') !== -1;
+}
+
+// Returns the raw .ics text, or throws an Error whose .code explains what went wrong:
+//   BAD_URL          – the saved address isn't a valid http(s) URL
+//   ALL_PROXIES_FAILED – every proxy (and the direct attempt) failed to respond
+//   NOT_ICS          – something responded, but it wasn't a calendar feed
+async function fetchICSText(rawUrl) {
+  const url = normalizeCalUrl(rawUrl);
+  if (!/^https?:\/\//i.test(url)) {
+    const e = new Error('bad url'); e.code = 'BAD_URL'; throw e;
   }
+
+  let reachedSomething = false;
+
+  // 1) direct attempt (works if the calendar host happens to send CORS headers)
+  // 2) each proxy in turn
+  const attempts = [ (u) => u, ...CORS_PROXIES ];
+  for (const build of attempts) {
+    try {
+      const res = await fetch(build(url));
+      if (!res.ok) continue;
+      const text = await res.text();
+      reachedSomething = true;
+      if (looksLikeICS(text)) return text;
+      // got a response, but it's an error page / not a calendar — try the next source
+    } catch (err) { /* network/CORS error on this source; try the next */ }
+  }
+
+  const e = new Error('fetch failed');
+  e.code = reachedSomething ? 'NOT_ICS' : 'ALL_PROXIES_FAILED';
+  throw e;
 }
 
 function icsDateToJSDate(val) {
@@ -651,14 +678,21 @@ async function renderTasks() {
   }
   calUpdatedEl.textContent = '불러오는 중...';
   try {
-    const text = await fetchTextWithCorsFallback(url);
+    const text = await fetchICSText(url);
     const events = parseICS(text);
     renderTaskItems(events);
     const now = new Date();
     calUpdatedEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} 기준`;
   } catch (err) {
     console.error('[calendar]', err);
-    calUpdatedEl.textContent = '캘린더를 불러오지 못했습니다. 주소가 올바른지 확인해 주세요.';
+    taskListEl.innerHTML = '';
+    if (err.code === 'BAD_URL') {
+      calUpdatedEl.textContent = '주소 형식이 올바르지 않아요. "https://…/basic.ics" 형태의 iCal 비공개 주소인지 확인해 주세요.';
+    } else if (err.code === 'NOT_ICS') {
+      calUpdatedEl.textContent = '주소는 열렸지만 캘린더 데이터가 아니에요. "공개"가 아닌 "iCal 형식의 비공개 주소"를 붙여넣었는지, 주소가 중간에 잘리지 않았는지 확인해 주세요.';
+    } else {
+      calUpdatedEl.textContent = '연동 서버(프록시)가 일시적으로 응답하지 않아요. 잠시 후 새로고침하면 대부분 해결돼요.';
+    }
   }
 }
 renderTasks();
