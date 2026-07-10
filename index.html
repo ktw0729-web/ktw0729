@@ -418,6 +418,13 @@
       구글 캘린더 기준: 캘린더 설정 → 원하는 캘린더 선택 → "캘린더 통합" → <b>비공개 주소(iCal 형식)</b> 복사 후 붙여넣기.
     </div>
 
+    <div class="city-search" id="proxyRow" style="display:none;">
+      <input type="text" id="proxyInput" placeholder="⚡ 전용 프록시 주소 (선택) — 예: https://이름.계정.workers.dev" autocomplete="off" />
+    </div>
+    <div id="proxyHelp" style="display:none; font-size:11px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; margin:-8px 0 14px; line-height:1.5;">
+      비우면 무료 공개 프록시를 써요(느릴 수 있음). Cloudflare Worker 주소를 넣으면 캘린더·뉴스 둘 다 훨씬 빨라져요. 만드는 법은 아래 도움말 참고.
+    </div>
+
     <div id="taskList" style="display:flex; flex-direction:column; gap:8px;"></div>
     <div class="sample-note" id="calNote">🔗 캘린더 미연동 · <span id="calUpdated">위 "🔗 캘린더 연동"을 눌러 등록해 주세요.</span></div>
   </div>
@@ -546,21 +553,34 @@ const calNoteEl = document.getElementById('calNote');
 const calUpdatedEl = document.getElementById('calUpdated');
 const taskListEl = document.getElementById('taskList');
 
+const proxyRow = document.getElementById('proxyRow');
+const proxyHelp = document.getElementById('proxyHelp');
+const proxyInput = document.getElementById('proxyInput');
+function getProxyBase() { return (localStorage.getItem('custom_proxy_base') || '').trim(); }
+function setProxyBase(v) { localStorage.setItem('custom_proxy_base', (v || '').trim()); }
+
 function toggleCalSettingsRow(forceOpen) {
   const shouldOpen = forceOpen !== undefined ? forceOpen : calSettingsRow.style.display === 'none';
-  calSettingsRow.style.display = shouldOpen ? 'flex' : 'none';
+  const disp = shouldOpen ? 'flex' : 'none';
+  calSettingsRow.style.display = disp;
   calSettingsHelp.style.display = shouldOpen ? 'block' : 'none';
-  if (shouldOpen) calUrlInput.value = getCalUrl();
+  proxyRow.style.display = disp;
+  proxyHelp.style.display = shouldOpen ? 'block' : 'none';
+  if (shouldOpen) { calUrlInput.value = getCalUrl(); proxyInput.value = getProxyBase(); }
 }
 document.getElementById('calLinkToggle').addEventListener('click', () => toggleCalSettingsRow());
 document.getElementById('calUrlSave').addEventListener('click', saveCalUrl);
 calUrlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveCalUrl(); });
+proxyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveCalUrl(); });
 function saveCalUrl() {
-  const v = calUrlInput.value.trim();
-  if (!v) return;
-  setCalUrl(v);
+  const cal = calUrlInput.value.trim();
+  if (cal) setCalUrl(cal);
+  setProxyBase(proxyInput.value); // empty clears it, reverting to public proxies
   toggleCalSettingsRow(false);
+  // Re-fetch both calendar and news with the new settings.
+  try { Object.keys(newsCache).forEach(k => delete newsCache[k]); } catch (_) {}
   renderTasks();
+  try { renderNews(); } catch (_) {}
 }
 if (!getCalUrl()) toggleCalSettingsRow(true);
 
@@ -586,6 +606,16 @@ const CAL_SOURCES = [
   { name: 'x2u',         build: (u) => `https://cors.x2u.in/${u}`,                                        json: false },
 ];
 
+// If a personal proxy (e.g. Cloudflare Worker) is configured, try it FIRST — it's typically
+// far faster and more reliable than the shared public proxies, which remain as fallbacks.
+function effectiveSources() {
+  const base = getProxyBase();
+  if (!base) return CAL_SOURCES;
+  const clean = base.replace(/\/+$/, '');
+  const custom = { name: '내프록시', build: (u) => `${clean}/?url=${encodeURIComponent(u)}`, json: false };
+  return [custom, ...CAL_SOURCES];
+}
+
 // Stale-while-revalidate cache (localStorage): show last-known data instantly, then refresh.
 function swrGet(key) {
   try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : null; } catch (_) { return null; }
@@ -600,7 +630,7 @@ function swrSet(key, data) {
 function raceFetchText(targetUrl, isValid, timeoutMs = 8000) {
   const outcomes = [];
   const note = (s) => { const pfx = s.split(':')[0] + ':'; if (!outcomes.some(o => o.startsWith(pfx))) outcomes.push(s); };
-  const attempts = CAL_SOURCES.map(src => (async () => {
+  const attempts = effectiveSources().map(src => (async () => {
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
