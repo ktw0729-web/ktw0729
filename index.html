@@ -406,29 +406,6 @@
     </div>
   </div>
 
-  <!-- TODAY'S TASKS (calendar ICS feed) -->
-  <div class="panel" style="margin-bottom:24px;">
-    <p class="panel-label">일정관리 <span id="calLinkToggle" style="cursor:pointer; font-size:10px; color: var(--ink-soft); text-transform:none; letter-spacing:0; margin-left:auto; padding-right:8px;">🔗 캘린더 연동</span></p>
-
-    <div class="city-search" id="calSettingsRow" style="display:none;">
-      <input type="text" id="calUrlInput" placeholder="캘린더 iCal(.ics) 주소를 붙여넣으세요" autocomplete="off" />
-      <button id="calUrlSave">저장</button>
-    </div>
-    <div id="calSettingsHelp" style="display:none; font-size:11px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; margin:-8px 0 14px; line-height:1.5;">
-      구글 캘린더 기준: 캘린더 설정 → 원하는 캘린더 선택 → "캘린더 통합" → <b>비공개 주소(iCal 형식)</b> 복사 후 붙여넣기.
-    </div>
-
-    <div class="city-search" id="proxyRow" style="display:none;">
-      <input type="text" id="proxyInput" placeholder="⚡ 전용 프록시 주소 (선택) — 예: https://이름.계정.workers.dev" autocomplete="off" />
-    </div>
-    <div id="proxyHelp" style="display:none; font-size:11px; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace; margin:-8px 0 14px; line-height:1.5;">
-      비우면 무료 공개 프록시를 써요(느릴 수 있음). Cloudflare Worker 주소를 넣으면 캘린더·뉴스 둘 다 훨씬 빨라져요. 만드는 법은 아래 도움말 참고.
-    </div>
-
-    <div id="taskList" style="display:flex; flex-direction:column; gap:8px;"></div>
-    <div class="sample-note" id="calNote">🔗 캘린더 미연동 · <span id="calUpdated">위 "🔗 캘린더 연동"을 눌러 등록해 주세요.</span></div>
-  </div>
-
   <div class="grid">
     <!-- WEATHER PANEL -->
     <div class="panel">
@@ -622,43 +599,7 @@ const CAL_URL_STORAGE = 'ics_calendar_url';
 function getCalUrl() { return localStorage.getItem(CAL_URL_STORAGE) || ''; }
 function setCalUrl(u) { localStorage.setItem(CAL_URL_STORAGE, u.trim()); }
 
-const calSettingsRow = document.getElementById('calSettingsRow');
-const calSettingsHelp = document.getElementById('calSettingsHelp');
-const calUrlInput = document.getElementById('calUrlInput');
-const calNoteEl = document.getElementById('calNote');
-const calUpdatedEl = document.getElementById('calUpdated');
-const taskListEl = document.getElementById('taskList');
-
-const proxyRow = document.getElementById('proxyRow');
-const proxyHelp = document.getElementById('proxyHelp');
-const proxyInput = document.getElementById('proxyInput');
-function getProxyBase() { return (localStorage.getItem('custom_proxy_base') || '').trim(); }
-function setProxyBase(v) { localStorage.setItem('custom_proxy_base', (v || '').trim()); }
-
-function toggleCalSettingsRow(forceOpen) {
-  const shouldOpen = forceOpen !== undefined ? forceOpen : calSettingsRow.style.display === 'none';
-  const disp = shouldOpen ? 'flex' : 'none';
-  calSettingsRow.style.display = disp;
-  calSettingsHelp.style.display = shouldOpen ? 'block' : 'none';
-  proxyRow.style.display = disp;
-  proxyHelp.style.display = shouldOpen ? 'block' : 'none';
-  if (shouldOpen) { calUrlInput.value = getCalUrl(); proxyInput.value = getProxyBase(); }
-}
-document.getElementById('calLinkToggle').addEventListener('click', () => toggleCalSettingsRow());
-document.getElementById('calUrlSave').addEventListener('click', saveCalUrl);
-calUrlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveCalUrl(); });
-proxyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveCalUrl(); });
-function saveCalUrl() {
-  const cal = calUrlInput.value.trim();
-  if (cal) setCalUrl(cal);
-  setProxyBase(proxyInput.value); // empty clears it, reverting to public proxies
-  toggleCalSettingsRow(false);
-  // Re-fetch both calendar and news with the new settings.
-  try { Object.keys(newsCache).forEach(k => delete newsCache[k]); } catch (_) {}
-  renderTasks();
-  try { renderNews(); } catch (_) {}
-}
-if (!getCalUrl()) toggleCalSettingsRow(true);
+function getProxyBase() { return ''; }
 
 function normalizeCalUrl(raw) {
   let u = (raw || '').trim();
@@ -797,85 +738,6 @@ function eventsForDay(events, day) {
   }).sort((a, b) => a.start - b.start);
 }
 
-function renderTaskGroup(title, dayEvents) {
-  const wrap = document.createElement('div');
-
-  const heading = document.createElement('div');
-  heading.textContent = title;
-  heading.style.cssText = "font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent-sky); text-transform:uppercase; letter-spacing:0.06em; margin:0 0 6px;";
-  wrap.appendChild(heading);
-
-  if (!dayEvents.length) {
-    const empty = document.createElement('div');
-    empty.style.cssText = 'color:var(--ink-soft); font-size:13px; padding:2px 0 4px;';
-    empty.textContent = '등록된 일정이 없습니다.';
-    wrap.appendChild(empty);
-  } else {
-    dayEvents.forEach(ev => {
-      const timeLabel = ev.allDay ? '종일' : `${String(ev.start.getHours()).padStart(2,'0')}:${String(ev.start.getMinutes()).padStart(2,'0')}`;
-      const div = document.createElement('div');
-      div.className = 'task-item';
-      div.innerHTML = `<span class="task-time">${timeLabel}</span><span class="task-title">${ev.summary}</span>`;
-      wrap.appendChild(div);
-    });
-  }
-  return wrap;
-}
-
-function renderTaskItems(events) {
-  const today = new Date();
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  taskListEl.innerHTML = '';
-  taskListEl.appendChild(renderTaskGroup('오늘 할일', eventsForDay(events, today)));
-  taskListEl.appendChild(renderTaskGroup('내일 할일', eventsForDay(events, tomorrow)));
-}
-
-async function renderTasks() {
-  const url = getCalUrl();
-  if (!url) {
-    calUpdatedEl.textContent = '위 "🔗 캘린더 연동"을 눌러 등록해 주세요.';
-    taskListEl.innerHTML = '';
-    return;
-  }
-  // Instant paint from cache while we refresh in the background.
-  const cached = swrGet('swr_cal_ics');
-  let paintedFromCache = false;
-  if (cached && cached.data) {
-    try { renderTaskItems(parseICS(cached.data)); paintedFromCache = true; calUpdatedEl.textContent = '저장된 내용 표시 중 · 업데이트 중...'; } catch (_) {}
-  }
-  if (!paintedFromCache) { calUpdatedEl.textContent = '불러오는 중...'; }
-
-  try {
-    const { text } = await fetchICSText(url);
-    swrSet('swr_cal_ics', text);
-    renderTaskItems(parseICS(text));
-    const now = new Date();
-    calUpdatedEl.textContent = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')} 기준`;
-  } catch (err) {
-    console.error('[calendar]', err);
-    if (paintedFromCache) {
-      // Keep showing the cached schedule rather than wiping it to an error.
-      calUpdatedEl.textContent = '갱신 실패 · 저장된 내용 표시 중';
-      return;
-    }
-    let msg;
-    if (err.code === 'BAD_URL') {
-      msg = '주소 형식이 올바르지 않아요. "https://…/basic.ics" 형태의 iCal 비공개 주소인지 확인해 주세요.';
-    } else if (err.code === 'NOT_ICS') {
-      msg = '주소는 열렸지만 캘린더 데이터가 아니에요. "공개"가 아닌 "iCal 형식의 비공개 주소"인지, 주소가 중간에 잘리지 않았는지 확인해 주세요.';
-    } else {
-      msg = '연동 서버(프록시)들이 모두 응답하지 않았어요. 아래 진단을 확인해 주세요.';
-    }
-    calUpdatedEl.textContent = msg;
-    taskListEl.innerHTML = err.diag
-      ? `<div style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); line-height:1.7; word-break:break-all;">진단: ${err.diag}<br><span style="color:var(--accent-sun);">숫자=거부(예:403/429) · err=차단/네트워크 · timeout=응답느림 · ok✗=응답했지만 캘린더 아님</span></div>`
-      : '';
-  }
-}
-renderTasks();
-setInterval(renderTasks, 10 * 60 * 1000);
 
 /* ---------------- WEATHER (LIVE: OpenWeatherMap — most widely used weather API worldwide) ---------------- */
 // OpenWeatherMap requires a free personal API key (no credit card) from https://openweathermap.org/api
