@@ -1064,7 +1064,18 @@ function looksLikeRSS(text) {
     (text.indexOf('<item') !== -1 || text.indexOf('<rss') !== -1 || text.indexOf('<feed') !== -1);
 }
 
+// 1순위: 사이트와 같은 곳의 news/news.json (GitHub Actions가 매시간 갱신). 실패하면 아래 프록시 방식으로 대체.
+async function fetchLocalNews(cat) {
+  const r = await fetch('news/news.json?' + Date.now(), { cache: 'no-store' });
+  if (!r.ok) throw new Error('local ' + r.status);
+  const j = await r.json();
+  const arr = j && j.cats && j.cats[cat];
+  if (!Array.isArray(arr) || !arr.length) throw new Error('local empty');
+  return arr.slice(0, 8).map(x => ({ h: x.h, src: x.src, link: x.link, t: x.pub ? timeAgo(x.pub) : '' }));
+}
+
 async function fetchNewsCategory(cat) {
+  try { return await fetchLocalNews(cat); } catch (_) { /* fall through to proxies */ }
   const { text, name } = await raceFetchText(newsCategories[cat], looksLikeRSS);
   console.log('[news] source used:', name);
   const xml = new DOMParser().parseFromString(text, 'text/xml');
