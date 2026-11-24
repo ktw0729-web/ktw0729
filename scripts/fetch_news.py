@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Google News RSS를 서버(GitHub Actions)에서 받아 news/news.json으로 저장.
 브라우저는 같은 사이트의 JSON만 읽으므로 외부 중계(프록시) 없이 동작한다."""
-import json, html, sys, urllib.request, urllib.parse
+import json, html, os, sys, urllib.request, urllib.parse
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
@@ -53,6 +53,7 @@ def main():
     if not cats:
         sys.exit("모든 카테고리 수집 실패")
     kst = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST")
+    os.makedirs("news", exist_ok=True)
     with open("news/news.json", "w", encoding="utf-8") as f:
         json.dump({"updated": kst, "cats": cats}, f, ensure_ascii=False, indent=1)
     if failed:
