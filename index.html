@@ -1130,23 +1130,41 @@ async function fetchNewsCategory(cat) {
   let local = null;
   try { local = await fetchLocalNews(cat); } catch (_) { /* fall through to proxies */ }
   if (local && local.updated && Date.now() - local.updated.getTime() < NEWS_MAX_AGE_MS) {
-    newsStamp = `${stampLabel(local.updated)} 수집`;
+    newsStamp = `${stampLabel(local.updated)} 기준`;
     return local.items;
   }
   try {
     const live = await fetchLiveNews(cat);
-    newsStamp = `${stampLabel(new Date())} 실시간`;
+    newsStamp = `${stampLabel(new Date())} 기준 (실시간)`;
     return live;
   } catch (liveErr) {
     if (local) {   // 실시간도 실패하면 오래된 자료라도 시각을 밝히고 보여 준다
-      newsStamp = local.updated ? `${stampLabel(local.updated)} 수집 · 실시간 갱신 실패` : '실시간 갱신 실패';
+      newsStamp = local.updated ? `${stampLabel(local.updated)} 기준 · 실시간 갱신 실패로 이전 자료 표시` : '실시간 갱신 실패로 이전 자료 표시';
       return local.items;
     }
     throw liveErr;
   }
 }
 
+// 1순위 실시간 경로: rss2json(무료·키 없음·CORS 허용). 무료 공용 CORS 프록시는 대부분 막혀 있어 보조로만 사용.
+async function fetchViaRss2Json(cat) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 10000);
+  try {
+    const r = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(newsCategories[cat]), { signal: ctrl.signal });
+    const j = await r.json();
+    if (j.status !== 'ok' || !Array.isArray(j.items) || !j.items.length) throw new Error('rss2json ' + (j.message || j.status));
+    return j.items.slice(0, 8).map(it => {
+      const parts = (it.title || '').split(' - ');
+      const source = parts.length > 1 ? parts.pop() : (it.author || 'Google 뉴스');
+      const pub = it.pubDate ? it.pubDate.replace(' ', 'T') + 'Z' : '';   // rss2json은 UTC "YYYY-MM-DD HH:MM:SS"
+      return { h: parts.join(' - '), src: source, link: it.link || '#', t: pub ? timeAgo(pub) : '' };
+    });
+  } finally { clearTimeout(timer); }
+}
+
 async function fetchLiveNews(cat) {
+  try { return await fetchViaRss2Json(cat); } catch (e) { console.warn('[news] rss2json 실패 → 프록시 시도', e); }
   const { text, name } = await raceFetchText(newsCategories[cat], looksLikeRSS);
   console.log('[news] source used:', name);
   const xml = new DOMParser().parseFromString(text, 'text/xml');
@@ -1203,7 +1221,7 @@ async function renderNews() {
       return;
     }
     paintNews(items);
-    newsUpdatedEl.textContent = `${newsStamp || stampLabel(new Date())} 기준`;
+    newsUpdatedEl.textContent = newsStamp || `${stampLabel(new Date())} 기준`;
   } catch (err) {
     console.error('[news]', err);
     if (paintedFromCache) {
