@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-28 13:20 KST",
+ "updated": "2026-11-28 14:20 KST",
  "cats": {
   "속보": [
+   {
+    "h": "[속보] 안양서 2세 원아 2명 학대 의혹…30대 보육교사 입건",
+    "src": "강원일보",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1BVlBWWWJCS3piNEkxdWF3dnZHNXFKVWg1TVV0R3RHRVo3TGY1U21XcXVBSjMxQ1VnVmRfWXRNS3Q1X0xJVVNNLS1Hcy1Dc3A3YXVXQWxNc2NOdVk?oc=5",
+    "pub": "2026-11-28T05:05:00+00:00"
+   },
+   {
+    "h": "[속보]“한 걸음만 늦어도 영원한 추격자”…이재명 대통령 AI 경쟁에 정부 역량 총동원 약속",
+    "src": "문화일보",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rS0dGYzM2UDVJelRETFpfNXRJZzlwXzlFLVNDSGpYZUlnRkFLaFd2VUthaDB6SUVJWVhBUXlTU1N1U3VPZWNEdHdqZXFBQXV4?oc=5",
+    "pub": "2026-11-28T04:53:35+00:00"
+   },
    {
     "h": "[속보]李대통령 &quot;AI 경쟁 선도국가 위해 총력 지원&quot;…&#x27;메가프로젝트&#x27; 동해 데이터센터 착공",
     "src": "KBC광주방송",
     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9aZ0x5clVpZGFkOThwSFJHN2h5R1BmYTUwZm5kZGZYbFFVbEl0aDBKSmdxLUNOY1FXM05XaTN3N080VVY4RXRkTVZtdDZHOG9UbjU3RFFwcWxXNlI4ejBtOQ?oc=5",
     "pub": "2026-11-28T03:47:06+00:00"
-   },
-   {
-    "h": "[속보] 김제서 음주운전 승합차와 승용차 충돌…60대 여성 숨져",
-    "src": "강원일보",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5pM3BrVlRGQV9MdktUQWdHQng0QmZCZHdRSEw1LURyMGFKNUlVTFVYUGZDQUxXUzdCRFZybjBvU0N3elMyOVJTVjF0N19EMlktZGxoNWplOTFoZk0?oc=5",
-    "pub": "2026-11-28T03:16:17+00:00"
-   },
-   {
-    "h": "[속보]에어컨 설치하러 갔다가 ‘날벼락’…10㎏ 에어컨 던지고 기사 2명 폭행한 40대 실형",
-    "src": "문화일보",
-    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1kaHJ6bk5yRzRpcnZGZWM4ck9aYnlQYk5sSkV0eW1HMVNfU0VDVEN2V2RTNFhQT0I5Vk03MWFMRkprUjZtNGZ2ZW9zdEJCRUlJ?oc=5",
-    "pub": "2026-11-28T04:09:04+00:00"
    },
    {
     "h": "[속보] 이 대통령 “AI경쟁에서 선도국가 되도록 모든 역량 집중”",
@@ -27,43 +27,55 @@
     "pub": "2026-11-28T04:08:16+00:00"
    },
    {
+    "h": "[속보] 설치기사에게 에어컨 집어 던진 40대 남성 징역 6개월",
+    "src": "국제신문",
+    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVHhJR3ZOcHpOUzdJbkU2SW9SSFZXeU1Va1RTanhoaGh4OWZJazRqbnpQc3F2dnFRZTYwUnJ2bFRJUDlISEtydXoxVnE5QXozSEtudzh5QmNrZm9mdGE1bmJiWHJQdE10TS1HUzNIZ1lqWm5aUGxJSzBkckRIQk1aSTZzVk5PbDNMWk1kMzNR?oc=5",
+    "pub": "2026-11-28T04:37:00+00:00"
+   },
+   {
+    "h": "[속보] “텐트 안에 사람이”…인적 드문 야산서 백골화된 시신 발견",
+    "src": "경기일보",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ocC16ekRLeDdMWlFtcGowaWMxSzZnQmZ2WjE3cWMxQVVvTmhCXzFJQjZuRnc1S0E2cHJuLTY1QzY4cnBpRjNGNUh2V3dnaHR4dEFoWVZVRXNaMk0?oc=5",
+    "pub": "2026-11-28T05:04:47+00:00"
+   },
+   {
+    "h": "[속보] 배우 홍민기 전 연인 실종… 경찰, 마포대교 인근 마지막 신호 포착",
+    "src": "천지일보",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9wSDUxZGdJZThoRWRVeUdaSmFiVnRnNHZVN2cyWnZ3cE13UDdsSmZyWEs4ZGZnNTZpak1VQ3Vwek5LU3VqM3ZlUS1Fc3lHNGxYd2I2NFFyZGFDVmFEcmVmc285NW1yZGFTUkE?oc=5",
+    "pub": "2026-11-28T04:47:53+00:00"
+   },
+   {
+    "h": "[속보] DL그룹 회장, 실적 부진 직원 수백명 한밤 호출 &#x27;논란&#x27;",
+    "src": "이코노미스트",
+    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1jTzhwTHZGUUFzejFsbzBLZUNmYTVCOFdpYURtaXllWWNtWm54Qmt3V2swcHV4NnYySTA0YVBiWkgyYW5lZTBwTk00QUkwUFltUzVTcUJadTZhaEhmWl9PaWxB?oc=5",
+    "pub": "2026-11-28T05:01:00+00:00"
+   },
+   {
     "h": "[속보]李대통령 &quot;동해에 총 2.4GW 초대형 AI데이터센터 캠퍼스 구축&quot; - 머니투데이",
     "src": "머니투데이",
     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9aWkVQMVladDRvOFpnZXlVSkpObHlNVXM0dXU5QWVqcU4tTjFlNjJ2Q0Z6SFZSckNSSDN5YnQ2NC0tZGNxcXNCUXk3Z0xnWFZXWVlDLTM2VTQ3VnhGRmdpakFRNUtnTTlWd1R1ZdIBckFVX3lxTE42M21HY0lnQ0pMb3VlWVUyVTZwa1E1LWNza2dlREZzS2k0VGtRR0dJSWljdHgxaWU5WXV4UlVlSm1TTnFIZzRYUEJOd2VxZ2FTc0NNbkxkWWlBWVc4ZGw3UDVJYTVrdDVhZXV2LTE1OVNvZw?oc=5",
     "pub": "2026-11-28T02:52:18+00:00"
    },
    {
-    "h": "[속보] 국정원, 김정은 추가 방중 가능성에 “여러 동향을 주시 중”",
-    "src": "강원도민일보",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5JOXBQc2JMSThnLThVdmhFU1VFeEJHbGpTbC1UbzYxeTllY1U1RUI2Q3dWMl9mR0JhOGR1THQxOXhiZjdDeXJmSzVKcHhWa2JVVDk0S21lSGZMTnE2OTNUc1ZnNVNQTk0?oc=5",
-    "pub": "2026-11-28T03:37:04+00:00"
-   },
-   {
-    "h": "[속보] 경찰, 남경필 전 경기지사 장남 구속영장…‘폭행·스토킹 혐의’",
-    "src": "경기일보",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBvX0tuSHVwaFFaNHNtWUJ4cGtnZHJXX01qaUppZFlfUWQ5azdrVzFMZ1hwS1gxY3l5SlpZcHFiZ2ladW5kWExFZXpXb2FXZk5UWjMydWxwWXhDRlk?oc=5",
-    "pub": "2026-11-28T03:22:21+00:00"
-   },
-   {
-    "h": "[속보] 한동훈, 김승원 로비 의혹에 “왜 제보자부터 찾나”…경찰 압수수색 비판",
-    "src": "세계일보",
-    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1ieGtHYmhlOURyX0pfU3dwVERlbXVUdl9vZFpnVU9ISkNXTjNyMEN4OWtwNF90aGdwUWo1TTVpYUxiTV9BbjZtdnBTYTB3NkVOVWdIOG90YmnSAVRBVV95cUxQZ2NRZlItMjl2elZ4amtVanllNEY1TGE5My1iV0RfTUdmMjF2SGtKc0h5dEF0WmxZNEt4OVoxMk9NWHJvTUFhV3JkZW5HU2wwYTZoU2w?oc=5",
-    "pub": "2026-11-28T03:20:19+00:00"
-   },
-   {
-    "h": "[속보] “동해에 아시아 최대 AI 데이터센터 첫 삽”…최대 2.4GW 구축, 李대통령 “정부 역량 총동원”",
-    "src": "데일리25",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBiN3psVUkwelFRRVh5Y25ZN0J0YjdETFFGYjJNdGs1eW5Ia0NWS1N2TjVvWXlXQ2kzakhJYjBjZ1NERVBPYzdfTXczUVhTX2tXU0F2dVJFbGVrYTdXLVB3YlUwQ3JreE9Ebmdncw?oc=5",
-    "pub": "2026-11-28T03:56:32+00:00"
-   },
-   {
-    "h": "[속보] 李대통령 `판다 요청`에 中 난색…국힘 `민망함은 국민 몫`",
+    "h": "[속보] 남경필 장남, `前연인 성관계 영상 유포 협박` 등 혐의…출소 1년 만에 또 구속영장",
     "src": "매일신문",
-    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9YVDE5cmhWN3FlN2lDSDZBa2xEODRvY0wyUlJoa2JMUDIwVjFVajZJM0pyQ1p1WVJ3T2JyZG05YXZIVDlyN0VXVkNlRnNIWFdXMnlCSWlZWXU0Si0yY1NUZTFn?oc=5",
-    "pub": "2026-11-28T03:01:35+00:00"
+    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9GaFdpS3JvWnhiRGFBUTZMQ1pNeEtWR1JSRDAwOVo0WklfdTl5b0gzYm9HTTVrYW5oUkwydmdBUmNMMHQwWlIwdUo3MkNrcGE4a1BfckxIbTVMN2NUWmFOYVhB?oc=5",
+    "pub": "2026-11-28T04:58:30+00:00"
    }
   ],
   "종합": [
+   {
+    "h": "최민희 ‘당원 정지 2년’ 중징계에 “수용 하기 어렵다”…민주 내홍 격화",
+    "src": "한겨레",
+    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBITzBmeXE3bjMxcWJsZnVrNmtpSHZNMmx0aUljdTl0OWJDSmVIOHpqZnNKLXNheWo2a1dHR1Z0UHJZWUFJZy1PV0hKSEZfQTBhRnhDU29JaUZPRnlIdVRUaTUxbjdGLWpyWmV4NE45aEFmczgx?oc=5",
+    "pub": "2026-11-28T01:01:00+00:00"
+   },
+   {
+    "h": "주말 전국 곳곳 비·눈… 일요일 아침 영하 5도까지 떨어져",
+    "src": "조선일보",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPR1Q1OVl3LWJQZHozTG12TFdBQTBVeERfVU5pbXJ6YUZDaVdQZVByQWoyY0tqU096SU1mNkNZOEtlMjFXeWJXRzZnN29adDFvd3N3RmtZOUtpUTgxZ3ZNeG9UU3BGZU9Ma0RESGRuYmcxVWt2TEFHWTQyNjEyLTdWOGFYcm1VR3pxUFFHUEdaaHo?oc=5",
+    "pub": "2026-11-28T00:51:00+00:00"
+   },
    {
     "h": "“당 꼬라지하고는” “민주당 세작”…국힘 뒤흔든 ‘조작 징계’ 뭐길래 [뉴스AS]",
     "src": "한겨레",
@@ -71,58 +83,46 @@
     "pub": "2026-11-28T03:25:00+00:00"
    },
    {
-    "h": "기온 7도 ‘뚝’ 곳곳 비·눈 소식…제주·전라 최대 5㎝ 쌓인다",
+    "h": "국민의힘 “민주당서도 반대하는 조희대 탄핵…즉각 중단해야”",
+    "src": "KBS 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5mSWJZVDM0dGZJRGVVUVQxaXBxZ1J3d1pRM3RoWmEzY1ZXVk51dmpnN1F1WUJoc2dBaHI2YWRyRm4ya1A2dkVPTWhzcEphbEVJbXBWcTBmY3FDaGc?oc=5",
+    "pub": "2026-11-28T01:21:00+00:00"
+   },
+   {
+    "h": "젤렌스키, 푸틴 ‘친구’라 부른 트럼프에 “히틀러 친구라는 것과 같다”",
     "src": "한겨레",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBVREN0QUd1azBXM3NIWlhnby03bzZhb1ZkWVJscnV1WmFSMGJUWXV1bFczZ1F0LTRyZGxRSUtyaldlLUZiRHFCTW42aWRWUEZQV2xSclNWWmVkTXlzN0tUb2tiUGxXaWMwWG10Sg?oc=5",
-    "pub": "2026-11-28T00:59:00+00:00"
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQcF9LTGliSHVZYV9pSW9HVE96SVI5RHktVk8telItZVVCVktvSGQ1eV9td2RrcUd4YVE2Z2JpRXNsYUZpekR3by1HbDRsTGx5bTZ2Uk16b1NGWWh2VTZia01ZQmFuZjlrUGtzbFlJMTJyYlZSd2JhaHBUdk5nbFR1NnN3?oc=5",
+    "pub": "2026-11-28T03:26:00+00:00"
    },
    {
-    "h": "이 대통령 &quot;성형후기 조작, 국민 기만 범죄…엄정 대응&quot;",
-    "src": "연합뉴스TV",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kNjRUbEhQb3Z3YWxIZkVTRUtRN0loajZXYnl4YV9kUm9ZaUdkaXRPNUFtc0Jqa2oxcEdoallWQ0NCUkhyMXNrNmtzeGd6OVBEQW1ENmt5b3RSUFdaRUFXVEg3bWMxU1k?oc=5",
-    "pub": "2026-11-28T02:26:00+00:00"
-   },
-   {
-    "h": "최민희 당원권 2년 정지… 김민석 ‘신천지’ 경징계 땐 전면전 불가피",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUHkzYUJkLXd0dzlXbERLUW5JNzVsWWwtMmxWRkkxaHUzRXJiWmoxVHQ2TVl2LVR1bTRMN0d6YVlCOHNWMUZuQk1tZUpTbjI2dFIzNzE2cHl3NjRsT05NRDlLZGVPQlVOTUxEb25PbjA0N2UzS2xZOXlIc0k3QzVxNkhDYkZrQQ?oc=5",
-    "pub": "2026-11-27T15:39:00+00:00"
-   },
-   {
-    "h": "세계변호사협회 “조희대 탄핵 재검토 촉구” 성명 발표",
+    "h": "이달 급여 1.9억 실수령 강금실… 재산 총액 2억6495만원 신고",
     "src": "동아일보",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0xSmFnbE83MzlkNkxBT2cyQTB1cEVIVkVWR09GV3RGa2QzYUhGdFY0ekVwQ1VLa1czd0dPZDVHdEt6VmkyVk82TzhJal9DS0RvcWpXT3hEVzB4eTNGRXk3OVlIS05FejRNaXZtWjJ4dHBlcjVDQnfSAWZBVV95cUxOQVRVV3hTbGlmTDhaanpLUzNSQnExU203a3Zqb3RrYzBqSVlvXzRHcjNVbkZVU01GZVNZNFBtYWkyZWxNR25sVVFDTlFya3RoMl9qNTVQMS1ib21IQTg4S3hNSXRnOXc?oc=5",
-    "pub": "2026-11-27T12:25:00+00:00"
+    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UX3RSbFFrczlPZGdrUmp5TzY1eGJkY3ZwdTB3TTRFMW1BbkpBVlhjeHBjT2VYb2dBcnM4U2VaVzBfUjFadDlyX19JNDBtdzFRY0xwQVZXZHNBUXhDU1BJYzYyVWk4TzNNLTMxV2lDZExyalVsc0ZV0gFmQVVfeXFMTXljY2E1SUZqZUpYUVpfY0FadmVLZ3ZtdzRlSzg5Z3JINTU1LUgtQnAyNDE3aXBMQzNMN0MzajN5VzhIMDBzcGZMRmd6TFhuSFZVbDVwWjdYVUwtM2JBOHBqSTVKMFB3?oc=5",
+    "pub": "2026-11-27T16:40:00+00:00"
    },
    {
-    "h": "트럼프 “서로 증오하는 푸틴-젤렌스키…종전 협상 최대 걸림돌”",
-    "src": "한겨레",
-    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA4dDZmOTJjZjN1emlMS05ubEdLalgyMllpWnFTQy0zM2s5QmlJSnJOSC1seXpYbVZybXpodWk1RkpUZ2psOUJCTlBobnNIdkNRa045VExncUhMNTZ2MnAxMlhELXU5OFhISDl4bVc3WQ?oc=5",
-    "pub": "2026-11-28T01:18:00+00:00"
-   },
-   {
-    "h": "&#x27;마약범죄 출소 후 전 연인 스토킹 혐의&#x27; 남경필 전 경기지사 아들 구속영장",
+    "h": "李 &quot;거대한 전환점&quot;‥아시아 최대 AI 데이터센터 동해서 첫 착공",
     "src": "MBC 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9XbG5KVVBRUFQtaHN6TjFhZ3hWcTRzWkotZWVpSGZVYWpUQVdjdndPV0ZOM2ZVTTNWcC0yUTE0WnhtcEhzUnR6RFVoREJKM3dKM3JtYXhKUDJ0RVpnTlFLbEROekxtUUFSb01Ya293LUFxX0ItcW5n0gF3QVVfeXFMTjN5VURvNHhHOVI2aGY2OGJGTHdFaGgtX3VmQnFVckFwSFl3NjRBXzlkLTlZOUdVSXpvVzhaZThIVVVpUzBPN0VYYkhQdV9QYzlZZ0tIUU9qbGFUSDg4dlVndXVKOEszRUJTVEFvWm5UTFNSbkYxZkE?oc=5",
-    "pub": "2026-11-28T03:09:14+00:00"
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE04WVZjdENVWU85OGh4dS1hNnhoS2NZTzYzSnQwUnVqeWRiUnZGMklCUVhrakFhNVFEdDlGSW8zSWwwbnpXRUFFbkF1WDAzc0xsLTA4MFRkQ0pMM2pxSGg3NWtrcmxzWk1WZnNmRWtVZHk4OTh2SDRyLdIBeEFVX3lxTE96Y3JrUTJ2V04zRVJCemNEVVNNLUlQNy02UHJPMTZOWTlveTdHTm9YRHZaSGR2T2RITzAtekt2RF9MSl9RUzh1Q0xpZ2FjRkxXUGM3NGlpdm9NVllRd0NHTmNvb2R0WExpM2RWb3l5V2pLSWNYNEJwWQ?oc=5",
+    "pub": "2026-11-28T04:23:27+00:00"
    },
    {
-    "h": "이임성 조작기소 특검 후보, 李 지사 때 경기도 고문변호사",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZEV3MVFJWlM1SnlfenFXbDNPeGZIc0tOVHlHbllBVkgyTzg2M0lwYnU3YTBQNDdvbklFRUNHejdnVUNoRkRvQzRjUnVENE5TODZUMTNMZE44cktUbUFZTnE5bEw5VkVsS05lZ05oNEtobHFjVk5IcDd2SHYxWENpYXBsRmstWXc?oc=5",
-    "pub": "2026-11-27T13:19:14+00:00"
-   },
-   {
-    "h": "강금실 국정원장 후보자 재산 2억6천만원…중국 특별고문 경력 자료 미제출",
+    "h": "남경필 장남 체포…전 연인 폭행·스토킹·‘영상 유포’ 협박 혐의",
     "src": "한겨레",
-    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5WNXNMOVdrckI5X0JwdWpxdGNhS3hPbWNNVkJwblJTTVluS2hjcGZodDY1RkpjTl9lNzJoZ25IdDZ5Wl9oeHVHNjlaWWdLa0ZCbFhpbkNuUXdOX19BQmxzeGdPeVV5b0NxY0hXaDZUaE1uWDFR?oc=5",
-    "pub": "2026-11-27T16:13:00+00:00"
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE96QTZJbElxUUxUbVJjMzhsU0VKaVpCT3QyM3Jqal9tTk00VlF6SkZlUGNzMzZpM21VRFhSMEZZYllpeG0zTGJxcUc2Y0txM3U3dlVOSzlvdEJ3d2JYd1FCbnpmQQ?oc=5",
+    "pub": "2026-11-27T07:23:00+00:00"
    },
    {
-    "h": "내년부터 국가자격시험에 전파탐지기…첨단기기 부정행위 차단",
-    "src": "대한민국 정책브리핑",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13Wk82LUk0MHRVSm9TbFlZcUd0TTVkdDBUVEN5VGVEX3JXMEx6b0JXa2pJS1BuZFd2dXgtZ2NhM3U5YjlZczBwdkNLdmlmSGZwa21CS3pTSE16WlhuUTllX0VrMFBrMC1xcUY0RA?oc=5",
-    "pub": "2026-11-27T19:39:12+00:00"
+    "h": "&#x27;조작기소&#x27; 특검 후보 이임성, 李 대통령 경기지사 시절 도청 고문변호사",
+    "src": "MBC 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1VaXQ3Y1FTQTM1bWdfVWpqd2t1M0F4ME1nbTdsR1hRczJoZm5Lel8xVXNLVmhjSHZqTlI1a1ZiRU4wU0ZtZDNtOTFFMkUwWXdnTmFaWmZETUlsSnE0UDM2TzVPelpXdjZxd1VOQmYybWpOMUwwQ1dj0gF3QVVfeXFMTnY0UF8zNUIzQ3JrOElBTTZBYVlCUGNKSkNxNUFrWTVNcFB0RGdaM0ZsbWxUN3loNk5vRElkdDQyMTNtQjhRQ05wNXVqRGFIWjRZcjloS2lVbGdTYkpHcG41NUlkTzJ5alV1enltMksxY0tDbVlLb1U?oc=5",
+    "pub": "2026-11-27T23:58:30+00:00"
+   },
+   {
+    "h": "대마도 배편까지 매진시킨 ‘반값 마운자로’…한·일 약값 차이의 비밀",
+    "src": "한겨레",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1CZTcyVWR2aXp0dlk0SThEZ2tIekF3SFVDemRLMmQwN0hDNzJPQlBKQU5ZUXRGRE0xOFNwMVB0MHFoWDdOcmx3OU0wM1I1SHNCcENKbjV0WXlJTUNOUG5uV05IYndDdw?oc=5",
+    "pub": "2026-11-28T03:24:00+00:00"
    }
   ],
   "경제": [
@@ -133,22 +133,22 @@
     "pub": "2026-11-27T06:32:00+00:00"
    },
    {
-    "h": "“한은 금리 인상, 이제 시작일 뿐?”…다시 빨라진 글로벌 ‘긴축 시계’",
-    "src": "매일경제 마켓",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0xclk0ME5HRXRuaUJTMFNWUXFZRnNGS3JtdzRld2I0cmtHaDJDNGZBazI2QXdZbU5MWWtnaEsxbnRzbUNaU3U0cTU4cTZiWmg0X0E?oc=5",
-    "pub": "2026-11-27T22:52:49+00:00"
+    "h": "李 &quot;올해 경제지표 역사적 이정표 세워‥&#x27;7대 시드&#x27; 속도 내야&quot;",
+    "src": "MBC 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE44SWNueGR1MFVIZzg0NTVKcC1MalpQeGpHZnl6c2xlYi0xaE8yVDBmaXhqN3ZJelRabU5tMVphdWo3ZUhENjZiM3AyUU1fOVJQUjlWWFBfa0M5N1UtbjNzNFVrLVBIVlR5QlhRVTI0bklsSTVkSXhUetIBeEFVX3lxTE5GOGpuMlRKV09oQk9wSmZUOTFFMTZVMkExYmJPVXljckd3M01NdGhJV1JTWUEzeVRGdC1OSlFwQWlqd3YtNW53WGF3Z245a01UX1FzZk92QVhzSGxkeW50Q255YkVjb0RqSUxMRkVhWGtsSkNQcEswWA?oc=5",
+    "pub": "2026-11-26T07:31:45+00:00"
    },
    {
-    "h": "&#x27;한한령 풀리면 날아갈 줄 알았는데&#x27;…일주일 만에 &#x27;날벼락&#x27; [종목+]",
-    "src": "한국경제",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uV1lEZ2ZxbjFES2hLSm1xb0RQbUlQZzZfTFgwVjRZa19aX0RXeDdkMGxwT19QYVRrQXQ0QnRfY1JVb0owSVJIUlhTOUdMektQVHdNSzNSeTdFZw?oc=5",
-    "pub": "2026-11-27T11:00:04+00:00"
+    "h": "&quot;&#x27;지속가능한 평택&#x27;. 경제성장만으로는 안된다&quot;",
+    "src": "뉴시스",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE16VUV6WWFnbjkwbkpEdUhxTkY1V21PTUNIVDgyNldiUXo0LU5ocnhpMGFTTkRRSEF3cGJIQllqZGFWSUk5TV9WZ0ZrbG9FelJ3cUVNRlJWSlZnaGpuejdYTtIBeEFVX3lxTE1idC1zZU43MGFFRmRMMGNyTGQtekhzRkh1ejlzQXBlblZOSXh1UWhUTE54N1djQi1oTWFlT0hyYUFDblhvcFZqR3NRUWk4dktYQ3Y0NUQtTnJxRGpsalZNQ0ttZDBkdm1CZzlteW1Ub2dVS2M1dVZOaA?oc=5",
+    "pub": "2026-11-28T04:09:53+00:00"
    },
    {
-    "h": "하락하던 잠재성장률, 반도체가 돌려세울까",
-    "src": "마켓인",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9TZ2M1VHBrc1cwbWFTSVJpSXJoNU1Xb2w1bzdkQTVEWGU1YmhyY1Q1Z0NmS3c0aWFVSENJeU4tV0I1ZW5XYW9zNFNLY0RvZEhHNXczRDg0eFU1RkI5YkQ4MnlEM2xIU0NJVmlWTjNITTNZMHM?oc=5",
-    "pub": "2026-11-27T23:00:04+00:00"
+    "h": "대전 찾은 장동혁 &quot;민주당 전임 시장 지우기에 경제 다시 침체&quot; - 머니투데이",
+    "src": "머니투데이",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBRbEpWR1JiOXphZk15TEFrZzZSUlZSbFgyQmx3MlVGc3JNaU1NUG9xXzlOVjdvbkNlSVJTVDYyaGEwSEY1Tl9xWVBSQkhDMjQwSDYzc01kMWFTcWY2eDRSMjlqSTAydS0zdnFDWV9LLTZzUHJYM0R4ekhn0gF_QVVfeXFMT0FDTWZoZlhxNXFpb192ZGtCNHB4cHN2Q3BSOTR0bERvYndlMHUweFYwcHBuY0EySDZqNkZpcnhYcTNNUHdpcHNDRm8zTnlNNmpCS2Z6SHRCLTI0Q1RqNWxsNEZHMjFyZHFoc1lJUnFqSkViN25nVndjTjJYTlhKMA?oc=5",
+    "pub": "2026-11-28T05:04:56+00:00"
    },
    {
     "h": "대학, 협력과 연대의 플랫폼…&#x27;사회연대경제 대학협의회&#x27; 발족",
@@ -157,34 +157,34 @@
     "pub": "2026-11-28T04:07:00+00:00"
    },
    {
-    "h": "[속보]李대통령 &quot;동해 AI데이터센터, 지역 경제 활성화 이끌도록 최선&quot; - 머니투데이",
-    "src": "머니투데이",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE03Q253YkdUOFRYbVB4NzdXYXlwbkxQR2JOUWlZVFJ1dGstdU9QTkF0dEwwN2tPQUN0S2dJcXRfTU1BZklMaTNWR0ZjQnNLWnNVR2lJVEp4NkxzYmc2LWlJQWtmbkZsMDdIaC1zWNIBckFVX3lxTE95UjRudVFSZVd0ckFkR2pod0ZNcWZQd2FKLWF3dG5iNG1EaWdOWEYwak9xemx4M21RTWdCNThLWlBBRW9kT3ZBbVNXbkJINUtVQXFob1pQdWlHMXNhN2F5M3p2ZU0zRFkyVlJHTDI1V1A2UQ?oc=5",
-    "pub": "2026-11-28T02:56:06+00:00"
-   },
-   {
-    "h": "李대통령 &quot;핵심 경제지표 역사적 이정표…7대 시드 더 속도내야&quot;",
-    "src": "연합뉴스",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ja1N2ckYwdDg5WU9jTW5jVmVRNVpwMGdNeTBSUENsdWpEcjl2dE5WSEd0ZjBVdVY5aTBWSFZnb2cxbE1idGJTSWd6eVFkQ1JPSlY2cFJCemRhNFnSAWBBVV95cUxNRFg1STJVa1FVUnRqZHBQeHNXUElZbWl1dkpsVVByQUx0TzhBTHlWTGRGQXZYeTJGMGJuNG4zbmZNUkZqaXpZc3VLOWNFdzVmQVNSY01Ma3FnVlZrS1hULWk?oc=5",
-    "pub": "2026-11-26T05:45:28+00:00"
-   },
-   {
-    "h": "李 “경제 지표서 역사적 이정표…글로벌 선도 국가 위상 다진 해”",
-    "src": "동아일보",
-    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFA1SkluX1RUMHdFMjBjd3VtZWpDR3p2UUE5Z3d1TDUzMUMybEV1Y1A4eEV1U1pfTDVtdEo0aHJxZngtUU9MN0xQQkxBeEdvRUI2N3ItMzVicnJOLXlSREFyUnM2cDZ2MVZ6UjhKNUtrUW5acmo0cVJ30gFmQVVfeXFMT1RxTWFNRWFpUHVSTW52QWdkck1xSnBTMHRFN1FBTnkxZFlMY09IaXZyRmRQSFdxbEpHbzJJYlZ6RENMb0tzVDdvanJYMXoxTDc2dFlnbkU0aHFoci0zcUFiS2EyakdB?oc=5",
-    "pub": "2026-11-26T05:35:00+00:00"
-   },
-   {
-    "h": "한국회계정보학회, ‘AI 대전환과 한국 경제’ 주제로 학술 대회 열어",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQUXNnd2RhclBYOW10N1hjeTdLZDVOYndLMlpCaUxDS0NrVjBHTFRpMlFZZTVreldHbGdBbndUdVZmSUotSzNpYml4YnJoWWdDRDMzSFY2ZjBoVUFTMGpIYzFCZTJnNUd6TWVKQUZMSkpEWGZZQ1NLN1ZJcl8wM2ZaaWxxYlZLUHYwWW9J?oc=5",
-    "pub": "2026-11-28T04:07:30+00:00"
-   },
-   {
     "h": "(설명) 한국경제(온라인),&quot;&quot;연속 야간근무 3일로 제한&quot;...새벽배송 빗장 거나&quot; 기사 등 관련",
     "src": "대한민국 정책브리핑",
     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xSmFGeV9oREg5XzRNc0lWYklsMXlsdHM1alJxVml4N051V1FHNzlnelBVVWZJcXlYUUR0Vzk4Ml91NXZFQnpJblZyVXBQTlFnSUZqcktQWTM4SDJJTldTMjh0TjJTdUJvRWpMMmV3NA?oc=5",
     "pub": "2026-11-27T22:22:52+00:00"
+   },
+   {
+    "h": "&quot;삼성전자 4만원까지 떨어질 수도&quot;…전문가 전망 나왔다",
+    "src": "한국경제",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBLWWdfQU90OS1hVmlqUllYOVRsb0t6Z0VjbDJueWdsZkNDVlgtNW1abGF6ZFB5MS04bW9hVXo0SlRobVItUC1lSmlXSEhKM0ZkV09JUXpPcFpRZw?oc=5",
+    "pub": "2026-11-27T22:49:52+00:00"
+   },
+   {
+    "h": "선거 지고 경제통계 탓?…트럼프 “3분기 성장률 조작” 조사 요구",
+    "src": "KBS 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9kT1NROGU0YU54Y3JwRzQ4c2hvbUVSVWpVT2xXTWxIUlpMbDRCM29ISmZrdzdmTW52WnMyRkxZdlNHT25maU10eEdrUDJ2cm00akstX0pZUWFFMFE?oc=5",
+    "pub": "2026-11-26T22:05:00+00:00"
+   },
+   {
+    "h": "&quot;AI는 세계 경제 엔진, 계속 투자해야… 통신·전력 인프라도 유망&quot;",
+    "src": "조선일보",
+    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQb1Q1cnVsNlN6NnotcEFQelVXMnAxTDFJdzMxNXIyc1ItM3hxWC1VNDBQVFg2bVFsQXhXbTMzeWRreEQ0Qm45ZGtBYmtET3QwS1dKazNsSmxUSXM4S3QxR2RkZHVEWGVKbGJQMUhPMENYdnRNazdkQllNdTVxemsycFByUVRDODY3LWRINUV3?oc=5",
+    "pub": "2026-11-27T15:36:00+00:00"
+   },
+   {
+    "h": "치안 안정되자 경제 살아났다…엘살바도르 30년만에 주변국 추월",
+    "src": "연합뉴스",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAxV1hJZWpvZjJuenVsU2NsRVF0ajBSWGZHalJENTd4aE1zNzVJN1ptY3c4ZFJLRUJhNEE5aWplMURjdnhZTzVuNDhyUXZCeU9acHNpMXMydkNvRTjSAWBBVV95cUxOMkthOE5MOTk1NTg3OWt6MFNVNlRVdVJDelZTTjV1S2w5d3djajBDbDl2a0J6MlZiU3hXT25nQmxkbThoVU9ldlFua0lUTGhlVUxPOGc2X0FmQ01uREdTUEU?oc=5",
+    "pub": "2026-11-27T16:32:20+00:00"
    }
   ],
   "IT": [
@@ -237,16 +237,16 @@
     "pub": "2026-11-27T00:28:29+00:00"
    },
    {
-    "h": "IITP, 양자통신·센싱 연구 성과 산업계 공유···기술사업화 추진",
-    "src": "이뉴스투데이",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1DTm1ybWNTYldMR3E4UTdoRl9SNWhCY0Nxa0I3aGNvUFQ0c2dfM1piUWFhZzVvUFltaHJqanJOdUZuTlZOeGpUS0dYakM3N1hhTk1aZFpWN29ib3RBQXpxVnNNQk5qWWRlQTlhWHhNYUXSAXRBVV95cUxOQ1FKVms0ZWd1dHBRd1N1LW5ueWkySi1CLVdVQ0xJcENSd1lBZllZOERpUUZXdFJobHpQNXliREEyTnR4eDJYakVDQVdXd0hrOEFNelI5ZHkyRFh6Y0syV2pQT0hrT3NFVWd3MkVTRGtEb1NmWA?oc=5",
-    "pub": "2026-11-27T04:45:00+00:00"
-   },
-   {
     "h": "KT, 정부혁신박람회서 공공기관 AX 기술 선봬",
     "src": "뉴스락",
     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1odUw4M0lsZTk3eXRVOVJidmlfay1ubnM4VEFrVk1iVzN2ZnRiTUlGZVFVbWhGTkk2M0NWeEZ0QnBOZFdSbmNvNUhFNEd0TWpaZVRmOVJTZGxkczMzMVlJREJVRTNOeUZpWUJmZQ?oc=5",
     "pub": "2026-11-25T06:18:13+00:00"
+   },
+   {
+    "h": "IITP, 양자통신·센싱 연구 성과 산업계 공유···기술사업화 추진",
+    "src": "이뉴스투데이",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1DTm1ybWNTYldMR3E4UTdoRl9SNWhCY0Nxa0I3aGNvUFQ0c2dfM1piUWFhZzVvUFltaHJqanJOdUZuTlZOeGpUS0dYakM3N1hhTk1aZFpWN29ib3RBQXpxVnNNQk5qWWRlQTlhWHhNYUXSAXRBVV95cUxOQ1FKVms0ZWd1dHBRd1N1LW5ueWkySi1CLVdVQ0xJcENSd1lBZllZOERpUUZXdFJobHpQNXliREEyTnR4eDJYakVDQVdXd0hrOEFNelI5ZHkyRFh6Y0syV2pQT0hrT3NFVWd3MkVTRGtEb1NmWA?oc=5",
+    "pub": "2026-11-27T04:45:00+00:00"
    }
   ],
   "스포츠": [
@@ -257,10 +257,10 @@
     "pub": "2026-11-25T05:06:44+00:00"
    },
    {
-    "h": "e스포츠 대학리그 전국결선 28일 부산서 개막",
-    "src": "국민일보",
-    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1Od2NoVm55VzRiUEl6N29DVEhxaHB0SHBFM1ZCdzNkbXFCdmhlc2xFbUFCME92S0N0dlpjV18yb2pGUTVZcnhXQXFrNU5RYnc1X0ZuMEZKVTI?oc=5",
-    "pub": "2026-11-28T03:19:20+00:00"
+    "h": "김연경 예능 또 통했다…시즌 넘어 쌓이는 스포츠 서사",
+    "src": "연합뉴스TV",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hcTNSdllyalU5TkdxWFd5VFZsTW91N0ZCR1FoTEkzbnh1c21jUjVSOXB3aUtOOEdTMFhHVFVsSWhoLWc3cER2LUpJMzI5MTE5R3gzendZNG1WOTcxcHlhcnhSZk5xOWs?oc=5",
+    "pub": "2026-11-28T02:32:00+00:00"
    },
    {
     "h": "중앙탑고, 2026 충청북도교육감배 사제동행 학교스포츠클럽 배구대회 남녀 동반 우승 : 네이버 블로그",
@@ -287,6 +287,12 @@
     "pub": "2026-11-27T01:55:46+00:00"
    },
    {
+    "h": "e스포츠 대학리그 전국결선 28일 부산서 개막",
+    "src": "국민일보",
+    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1Od2NoVm55VzRiUEl6N29DVEhxaHB0SHBFM1ZCdzNkbXFCdmhlc2xFbUFCME92S0N0dlpjV18yb2pGUTVZcnhXQXFrNU5RYnc1X0ZuMEZKVTI?oc=5",
+    "pub": "2026-11-28T03:19:20+00:00"
+   },
+   {
     "h": "김해시체육회, 재정자립·스포츠 인재 유출 방지 해법 모색",
     "src": "뉴스타운",
     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5WQTIzUVVXXzhMb0I3UFlGb3M1NDFfb3lzMWplVjAtUm1nUk5ISXNpSFFVd29pNWYtWkRrQW51VXVJLWNneWhaM1lya2VwTmJmM3RuTTViaHNhTDJWVktYQWpPemc2WVlnNll3V2FB?oc=5",
@@ -303,12 +309,6 @@
     "src": "국제뉴스",
     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xZ0EyaHJrQVVncWVjZFctZmxjS0t0dGM5RmJuSXhGQlNlS2tUNEhVVVVZYXZTS2VxdFFjRS1LWlJvSVNVUDg4Rl9BTGhpcmpzeHlzbUxBZkxWb1pRRDdtbkVqbFhYRGFKbmVOTGRB?oc=5",
     "pub": "2026-11-28T02:50:26+00:00"
-   },
-   {
-    "h": "최가온·황서현 등 미래의 스포츠 스타 64명, 태인체육장학금 받았다",
-    "src": "문화일보",
-    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBUTWRERDFDM0FDOUNLODR1UGppRXA2Qnp6b0VqVGxFREpYemhhNWlPR2RtRWFQNEhEWS1oY1QxZ3NzZ3lZTmtCSDJIeXhJckQ5?oc=5",
-    "pub": "2026-11-27T00:42:28+00:00"
    }
   ]
  }
