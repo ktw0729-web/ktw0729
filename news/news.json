@@ -1,7 +1,13 @@
 {
- "updated": "2026-11-28 16:52 KST",
+ "updated": "2026-11-28 17:20 KST",
  "cats": {
   "속보": [
+   {
+    "h": "[속보]한파·강풍 속 전국 곳곳 산불…산림청 &quot;각별히 주의 당부&quot;",
+    "src": "KBC광주방송",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10cmpHbUVER1poeFRqM1B1djZhaE1wVzBmcHNLbFVhUFRLWlAzeGNyQ1pfaXdUYXMxUGtmdVZOY09UU3dvUmkwY09icVZsdnhfSlhHY1k0TUtnTld0elREMA?oc=5",
+    "pub": "2026-11-28T06:24:54+00:00"
+   },
    {
     "h": "[속보] “많이 구매해달라” 이재명 대통령, 강릉 주문진수산시장 찾아 민생 소통",
     "src": "강원일보",
@@ -9,10 +15,10 @@
     "pub": "2026-11-28T06:22:32+00:00"
    },
    {
-    "h": "[속보]“재건축하다 쫓겨날 판”…분당 2만4000여가구 재초환 부활에 뿔났다…폐지요구 집단성명",
-    "src": "문화일보",
-    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9QMC12V0pjSGpHMnB3UzFqOEw0RDJmcm1jeldUUHNQd0F0ck5PSlJDaVRaM2IzLXNGd1A2bF9mdWJlQm53VjFybEU4Q0Nremc0?oc=5",
-    "pub": "2026-11-28T06:29:16+00:00"
+    "h": "[속보]포스코 노사, 2026년도 임금협상 타결 - 머니투데이",
+    "src": "머니투데이",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBEbXJuWUdhVDMyNVpkRWFHV0pEQUVsODgxWlFCZkE3dXN0SWJHSVo4bnB2aHN3MWx6dHBuN05kdW85bThPN0VmSzdpd2dJNkNrMnkwS0k4N25jbHl3LTNfNktnZndBbjVsRHM0S9IBckFVX3lxTE9GYVk5V0cwUHJJTElhNFN3ZF9EaWFCVHlWeExFQ3JUZmMxcWRvOFl6aWNlb29qcTJnd1lCSzhBYlRYSjFpUnBOOUo4LW9Bemk5cGVyeWdXNG13dFg4M1RnNlhXRDNLVzNqN1U1WXF3SVh6QQ?oc=5",
+    "pub": "2026-11-28T08:16:52+00:00"
    },
    {
     "h": "[속보] 성주부터 전국 잇단 산불…산림청 &#x27;산불 예방에 국민 협조 당부&#x27;",
@@ -21,10 +27,22 @@
     "pub": "2026-11-28T06:16:15+00:00"
    },
    {
-    "h": "[속보] &quot;내 집 재건축하다 쫓겨날라&quot; … 분당 2만4000가구 규모 8곳 재초환 폐지 공동성명",
-    "src": "뉴데일리 경제",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5zaFZ2Q0NVYWRqajkxWlJKdEpvbV9KSUNpVGJCSWRzU1ZHWENXVGFtWGt3S2RHUTZDak11OFJlM1BZNXVjQ3FIa0h6Tlo1V2xtYk1JR1UxdnNRbVJMM2hLOG5TalczaUhIWUtnTGl6c1pSU0RHY01FN0o2Z9IBgAFBVV95cUxNMWN3YktDNlcwREpfTjhYQmE0ZENxdkdxaWFFejFnRVB5UkFpTzh4TTFxYnB6YXNsbHNEanhRVjFwbU1nNmJPeDg2NDl2U1dZaHdmcFJiVHVPbksxZkRVLVY5ZjZlRmlwdWlSeDBrdzdUbFNyNmZvdHFWY3BiSzczTQ?oc=5",
-    "pub": "2026-11-28T07:15:00+00:00"
+    "h": "[속보]“한 걸음만 늦어도 영원한 추격자”…이재명 대통령 AI 경쟁에 정부 역량 총동원 약속",
+    "src": "문화일보",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5rS0dGYzM2UDVJelRETFpfNXRJZzlwXzlFLVNDSGpYZUlnRkFLaFd2VUthaDB6SUVJWVhBUXlTU1N1U3VPZWNEdHdqZXFBQXV4?oc=5",
+    "pub": "2026-11-28T04:53:35+00:00"
+   },
+   {
+    "h": "[속보] 국힘 &quot;이재명 재판 재개, 역사의 명령 … 대통령도 죄 지었으면 재판 받고 감옥가라&quot;",
+    "src": "뉴데일리",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBocnczMEpoTG1oYTV4WmJMd2NoU19TaGpEaTZicmNnbEVPQl83UXE3ek9OMkgxc2hVRlEycjk2UFdqd1diNDN4YmFxbnFJYzlZSGFiaVNKWUxoUzhtaTZYQVdaNE5IUWpvZ280Z1FOWHRQemI3WEV4UDlVUQ?oc=5",
+    "pub": "2026-11-28T07:04:00+00:00"
+   },
+   {
+    "h": "[속보] KIST 강릉 분원 찾은 이재명 대통령...강원 천연물 산업화 혁신센터’ 예산 반영·신속 추진 약속",
+    "src": "강원도민일보",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5MNGtROUJ6YnZIRHBacHRJOUgxeVJJNXhhT0ZBVnNjOUUtdEZkbXZNNWlOTlFoVGRZYzVoT1Q3ZmFpaXoxSkdsTnV5cG1ESFB2UVlKQkZMTVZhRW43OVZMQ0hZVUQtYW8?oc=5",
+    "pub": "2026-11-28T08:06:02+00:00"
    },
    {
     "h": "[속보] 실적 부진 지적하려고…DL그룹 회장, 한밤중에 직원 수백명 호출",
@@ -33,34 +51,16 @@
     "pub": "2026-11-28T05:25:00+00:00"
    },
    {
-    "h": "[속보]한파·강풍 속 전국 곳곳 산불…산림청 &quot;각별히 주의 당부&quot;",
-    "src": "KBC광주방송",
-    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE10cmpHbUVER1poeFRqM1B1djZhaE1wVzBmcHNLbFVhUFRLWlAzeGNyQ1pfaXdUYXMxUGtmdVZOY09UU3dvUmkwY09icVZsdnhfSlhHY1k0TUtnTld0elREMA?oc=5",
-    "pub": "2026-11-28T06:24:54+00:00"
-   },
-   {
     "h": "[속보] 전국 잇단 산불…산림청 “산불 예방에 국민 협조 당부”",
     "src": "세계일보",
     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE45azJFNDJLMUs4QkpJUDRhUFpxajJ0T1p4bG5rS1IxUTJNaE5KeDBieXBqenBxb3dFQnVpZ2Y2Y202SWRzWl9scXQxV1BXdXR4Z3Y3dXhPQ3HSAVRBVV95cUxNeXFLUm02eDdDTXFkX0U5UE9pWUgwcE5JcFY5WG1wS3ZQbnNXb2tMTEh6VElKMGFxcldabnVieXZyaUVBZXN2RkZKZUlIckdxczR0VXU?oc=5",
     "pub": "2026-11-28T06:03:44+00:00"
    },
    {
-    "h": "[속보] 이 대통령, 강릉 주문진건어물시장서 상인 만나…연말 물가 점검",
-    "src": "강원도민일보",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB2cmszeHRDZ2h6eXNldHViYjREWExrQWRUaV9MMTlQNHVWVktsZkRDQmxIVVBNeEloTFdjdzJaWXdON19jY1dVbWpNaGh5cEU1RUxMeWdEYWlDSktLcHZzNl8wcHE0aFk?oc=5",
-    "pub": "2026-11-28T06:25:34+00:00"
-   },
-   {
-    "h": "[속보] 축협 간부, 노래방서 50대 여성 성추행한 혐의로 재판행",
-    "src": "천지일보",
-    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5JQVJWREtNeWdRbzV2YmNKdEdTcVlDa3BtM0lSQVVoNFpIWloxRDlJODl3SGRnYWEtNHpveEktMUhpSGlULUo5aENuWXJhWjFKaDZSUzZpTm05YktjbThwVENkLWVMYzFya2c?oc=5",
-    "pub": "2026-11-28T05:49:15+00:00"
-   },
-   {
-    "h": "[속보] 인천 앞바다 뒤집힌 카약에 매달려 버틴 부자 ‘극적구조’...반려견은 실종",
-    "src": "경기일보",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE56VW45by1BcjZwOVplMktBTEN6cUVwVDZsVVlBZ1JFN2YwaGFLN0ZVZjQ4TlozSk5aeWRBM3lFRldTelJnU1hBaGRiWmItcWZHMFBZZmtBZFNKSjg?oc=5",
-    "pub": "2026-11-28T05:50:57+00:00"
+    "h": "[속보] &quot;내 집 재건축하다 쫓겨날라&quot; … 분당 2만4000가구 규모 8곳 재초환 폐지 공동성명",
+    "src": "뉴데일리 경제",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5zaFZ2Q0NVYWRqajkxWlJKdEpvbV9KSUNpVGJCSWRzU1ZHWENXVGFtWGt3S2RHUTZDak11OFJlM1BZNXVjQ3FIa0h6Tlo1V2xtYk1JR1UxdnNRbVJMM2hLOG5TalczaUhIWUtnTGl6c1pSU0RHY01FN0o2Z9IBgAFBVV95cUxNMWN3YktDNlcwREpfTjhYQmE0ZENxdkdxaWFFejFnRVB5UkFpTzh4TTFxYnB6YXNsbHNEanhRVjFwbU1nNmJPeDg2NDl2U1dZaHdmcFJiVHVPbksxZkRVLVY5ZjZlRmlwdWlSeDBrdzdUbFNyNmZvdHFWY3BiSzczTQ?oc=5",
+    "pub": "2026-11-28T07:15:00+00:00"
    }
   ],
   "종합": [
@@ -83,46 +83,46 @@
     "pub": "2026-11-28T07:32:00+00:00"
    },
    {
-    "h": "이 대통령 &quot;성형후기 조작, 국민 기만 범죄…엄정 대응&quot;",
-    "src": "연합뉴스TV",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kNjRUbEhQb3Z3YWxIZkVTRUtRN0loajZXYnl4YV9kUm9ZaUdkaXRPNUFtc0Jqa2oxcEdoallWQ0NCUkhyMXNrNmtzeGd6OVBEQW1ENmt5b3RSUFdaRUFXVEg3bWMxU1k?oc=5",
-    "pub": "2026-11-28T02:26:00+00:00"
+    "h": "대법원은 왜 12·3을 내란이라 쓰지 못했나",
+    "src": "한겨레",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1McmtpYThyZUdNWW9PaFNiTFlnRklEb20yMjZfVkJlMXpvcFRuV3hJcVpDSUt0NVJyLXBPcXQ2enBDckgzQlJOZEQ0Z2xJOFJBMUlLUjZiXzRxUWtDcWpXSHNHTTlZOTd6YUlCQTZYUzh0QQ?oc=5",
+    "pub": "2026-11-28T07:56:00+00:00"
    },
    {
-    "h": "김정은 추가 방중 가능성에 국정원 &quot;여러 동향 주시 중&quot;",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQenBLYXlObl9IbW1WbGpwOG1zcmwwN0htdXpneHJZOEVhTHpfMFRWOXpHcXN2eGE3cDNIdzU1QzRkTjhEQU5hQ2lBelBBdnlKNzFENXY4UVc1c0RYUFNfVWFweDcwcm5vX1R6NXYxaEhOUjQ2T1ZIb3dLdTBTcFBCQXlta1FETWgwNGc?oc=5",
-    "pub": "2026-11-28T02:06:00+00:00"
+    "h": "김정은 또 중국 방문할까…국정원 “여러 동향 주시 중”",
+    "src": "경향신문",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8tbTZmdUJsUUY5Mi1FXzVLTXJhOXZnLTh6ZXJJd3VOMTZJd1U5dGFIWWFxbWVURkk3WmtVbEJ0d3BzWVNBcWIyQ0g4dGpMdVR0OXJUY3UwVEw3d9IBX0FVX3lxTE5JeERXZWlRMzBPd3R6WEx0UmhtTGtGR0dsUWJYZkpFdklvbEFkS1BjM096VEJtczhYSEU0X0pTMVZVZGJWME1iN3hJbkxrVV9YOUZmdXdVM1VKT1hkckJJ?oc=5",
+    "pub": "2026-11-28T03:07:00+00:00"
    },
    {
-    "h": "강금실 후보자, 11월 실수령액 1억9000만원…재산 2억대 신고",
-    "src": "매일경제",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1GTFVHYWhxVGNxRDQ1S1VpMUFzU041eFEtUVdkV1B6M3VPcWxQb0tjYVJpbFg0RW5TcVZhZk5vNmF0T0dZZ0IzVHZtTE94ZFBfVV8ydHRR?oc=5",
-    "pub": "2026-11-28T06:07:29+00:00"
+    "h": "비만약 지원에 세금 2800억…도마 위 오른 지자체 정책 [이슈+]",
+    "src": "한국경제",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1pMHVBUWNPQldZWVJkMjhKRjFkX1Q3bi1kVnMxczYtVVdpRW51YlVYV29JNm1vVkduTTJJQ1hFdE1Dc056SGdCWTBmNFpaVnExSmFROXduNFJEQQ?oc=5",
+    "pub": "2026-11-28T05:18:26+00:00"
    },
    {
-    "h": "&quot;韓보다 싸다&quot;…日 대마도 몰려간 &#x27;마운자로 원정대&#x27;",
+    "h": "[금주의 관심인물] 국정원장 후보 강금실·&#x27;9급 비하 논란&#x27; 정영란",
     "src": "연합뉴스",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ENTN2MHdKSlV5RVNFTEJ1Nzh1ZVFQS0ZZVUl0djhRMHJuVHFNZS1QN3g4SVNQSTlDVjFYQUlMQThVMEtOUjlCMGF0d21wLXhyV2pFN0kyVHg1QlXSAWBBVV95cUxOMldxRlRLT3ZJVE5KZS12SjBFdFRyTHkxbVZON3d1Tnk1Z1hKM0RPVGljOE5MazdoUklWNU50aGVTTVlhQVhvbHZvLXdhZVQxNVFxQnBkaGN1TnIzWmhRWHA?oc=5",
-    "pub": "2026-11-28T06:08:02+00:00"
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9PRk5KSjFGcEZKTHc1OXVqTy1aSW1aUUJqSzhsRzVLZnFtUGJZLXpjdmJUeU13eW5YVGxFMm1rUVV1UGZQOFd4NTlid0dLXzBTeTZwZFVRNTlfa2PSAWBBVV95cUxQNExYMUwtSjRpcWtUVGx2c1Q1SUhZM3UxOHJmYWFsTHRFUFktUXo4dGpyZ1BwcTk5TkJmSlU4cldkSzZXY3hSblBpME44dERWWHI5dERoYUxmYXVLWV9KS1U?oc=5",
+    "pub": "2026-11-27T21:00:02+00:00"
    },
    {
-    "h": "세계의 날씨(11월28일)",
-    "src": "연합뉴스",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBZSjdqMUFjWHdGc1BBaWtSNnJhTXJVaEJJVWRNc2p6U0hUeWo4UWlqTVUxNWR5elNoUWdtdFgycTBwOXJfOU5CelpxRmdENU12dWE5dkJsSzVhZWs?oc=5",
-    "pub": "2026-11-28T06:08:22+00:00"
-   },
-   {
-    "h": "미래대응기금 놓고 청와대 &quot;빚 아닌 자산&quot; VS 학계 &quot;빚은 빚, 빌린 돈 저축이 되진 않아&quot;",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMlhIUGg1aXVKbjVnak1VOGVpWGpBNklzQXZabnZPTEdoWDhtZWtwOU5nRXJtMDBKUHhRTTgyX05OaWZPRExhZ3o0Zkt5cW1tX0gwN2NtdU9ubldvNENhdE5uNWdrWmVXQUV6UTVXMk5yOVNOeW5rdzZ3eEg4MHV0WG5kbl9jcHc5OWZybkh3?oc=5",
-    "pub": "2026-11-27T06:34:13+00:00"
+    "h": "&quot;기가 막힌다&quot;…가짜 성형 후기에 李 대통령 &#x27;엄정 대응&#x27;",
+    "src": "한국경제",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9uS1RuMnZGSHhHcWxGWERUNDBGVjN1WFpBeEUwa1poQ1NrdDJsbmV0T09sT1hlRklCX3R6cjhwN0hDVUdVcHdNbHlTbDFyTzAxZmlJN3ZMTXBpQQ?oc=5",
+    "pub": "2026-11-28T02:31:31+00:00"
    },
    {
     "h": "&#x27;마약범죄 출소 후 전 연인 스토킹 혐의&#x27; 남경필 전 경기지사 아들 구속영장",
     "src": "MBC 뉴스",
     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9XbG5KVVBRUFQtaHN6TjFhZ3hWcTRzWkotZWVpSGZVYWpUQVdjdndPV0ZOM2ZVTTNWcC0yUTE0WnhtcEhzUnR6RFVoREJKM3dKM3JtYXhKUDJ0RVpnTlFLbEROekxtUUFSb01Ya293LUFxX0ItcW5n0gF3QVVfeXFMTjN5VURvNHhHOVI2aGY2OGJGTHdFaGgtX3VmQnFVckFwSFl3NjRBXzlkLTlZOUdVSXpvVzhaZThIVVVpUzBPN0VYYkhQdV9QYzlZZ0tIUU9qbGFUSDg4dlVndXVKOEszRUJTVEFvWm5UTFNSbkYxZkE?oc=5",
     "pub": "2026-11-28T03:09:14+00:00"
+   },
+   {
+    "h": "예산안 시한 D-4, 미래대응기금 의결 모두 보류‥주말까지 공방",
+    "src": "MBC 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5mYmdJYVczWHRvUDU4MzFES1p1UW52VWNiQlhPTktDc2xpTld0QmlXUWwxcjZoekpaSUdQZHNZR09Bei1XMTRHS3p1dmxyLVhuNy1ZVnEtWWoySklSUjgycTd2QnJqVHJHR05LSE9IUjhvT3Rva1ktU9IBeEFVX3lxTFBmQ1ZmWjlEaTl6R2VPMUxXU21ER3BvM3VBSFhGWUk2MFYzcDVsMFRNLV80bUJBN1FxZzEyWFlYQkJNcE51b182SlZER0dhWGRTZTZRNnRVVzlRai01bGFqalFBaHZCOEctQ2tEOUtjVmtETUxsYm1JSA?oc=5",
+    "pub": "2026-11-28T00:35:05+00:00"
    }
   ],
   "경제": [
@@ -137,12 +137,6 @@
     "src": "MBC 뉴스",
     "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE44SWNueGR1MFVIZzg0NTVKcC1MalpQeGpHZnl6c2xlYi0xaE8yVDBmaXhqN3ZJelRabU5tMVphdWo3ZUhENjZiM3AyUU1fOVJQUjlWWFBfa0M5N1UtbjNzNFVrLVBIVlR5QlhRVTI0bklsSTVkSXhUetIBeEFVX3lxTE5GOGpuMlRKV09oQk9wSmZUOTFFMTZVMkExYmJPVXljckd3M01NdGhJV1JTWUEzeVRGdC1OSlFwQWlqd3YtNW53WGF3Z245a01UX1FzZk92QVhzSGxkeW50Q255YkVjb0RqSUxMRkVhWGtsSkNQcEswWA?oc=5",
     "pub": "2026-11-26T07:31:45+00:00"
-   },
-   {
-    "h": "대전 찾은 장동혁 &quot;민주당 전임 시장 지우기에 경제 다시 침체&quot; - 머니투데이",
-    "src": "머니투데이",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBRbEpWR1JiOXphZk15TEFrZzZSUlZSbFgyQmx3MlVGc3JNaU1NUG9xXzlOVjdvbkNlSVJTVDYyaGEwSEY1Tl9xWVBSQkhDMjQwSDYzc01kMWFTcWY2eDRSMjlqSTAydS0zdnFDWV9LLTZzUHJYM0R4ekhn0gF_QVVfeXFMT0FDTWZoZlhxNXFpb192ZGtCNHB4cHN2Q3BSOTR0bERvYndlMHUweFYwcHBuY0EySDZqNkZpcnhYcTNNUHdpcHNDRm8zTnlNNmpCS2Z6SHRCLTI0Q1RqNWxsNEZHMjFyZHFoc1lJUnFqSkViN25nVndjTjJYTlhKMA?oc=5",
-    "pub": "2026-11-28T05:04:56+00:00"
    },
    {
     "h": "“주식에 자식 걱정까지”…5060 노후파산 생존법 [경제한방]",
@@ -175,31 +169,25 @@
     "pub": "2026-11-27T16:32:20+00:00"
    },
    {
-    "h": "&quot;AI는 세계 경제 엔진, 계속 투자해야… 통신·전력 인프라도 유망&quot;",
-    "src": "조선일보",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQb1Q1cnVsNlN6NnotcEFQelVXMnAxTDFJdzMxNXIyc1ItM3hxWC1VNDBQVFg2bVFsQXhXbTMzeWRreEQ0Qm45ZGtBYmtET3QwS1dKazNsSmxUSXM4S3QxR2RkZHVEWGVKbGJQMUhPMENYdnRNazdkQllNdTVxemsycFByUVRDODY3LWRINUV3?oc=5",
-    "pub": "2026-11-27T15:36:00+00:00"
-   },
-   {
     "h": "[시사 경제용어 따라잡기]관세할당제도란?",
     "src": "생글생글",
     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82a3pSbGxJRW1aWndPd2h1cFNSS1BsLTF2T0htaFQyNmVOYXgwVVk1UDU1cF94YkdWVHhhbzhHVmkySFJZNGtzb3NLbzFXVURQSVM0VEFzNWNUNHc?oc=5",
     "pub": "2026-11-27T00:48:00+00:00"
+   },
+   {
+    "h": "&#x27;관세 부활&#x27; 미국 경제에 부메랑...&quot;가구당 연 900달러 부담&quot;",
+    "src": "YTN 사이언스",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16OTFQc1FYX1M5Q2s3QUFCcDZ5Ylk3TFRmd09kNnBLNXZ3M3ZNSk84Sk0wejZnZFNnMFRGempKVXdoTlVNVmhSdnBTa1ZVNmtVdmR1bjFFLU1sUG40cWM2dm1CSGVrRnRnS1ozUTJmRXBTbGFraFg1WjFsaDYyVHM?oc=5",
+    "pub": "2026-11-27T07:03:13+00:00"
+   },
+   {
+    "h": "&quot;무효화 전 수준으로 인상&quot;‥&quot;경제지표 가짜&quot;",
+    "src": "MBC 뉴스",
+    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9OelhiZGVyOEZpVHNZWVk4UU9qQ2dtRmpNVG5zbUpQOHNHYlBkVjBJT2hVREYyUV9IMk9ZLUhzakJVckpYUUkxOW13SHRaYUFRb19JeWVMQVRfLTQycVgwWlJoaWl4OWxvSk9lSWxQN1pXLTZmR3Jz0gF3QVVfeXFMTm1qbjlNS0d4Rk5QQ1ZkR3NmN0t5NGFudmJlQXV1em1XME5STU1fWmZyN0xOMUVHMkRXT0FHUWl6ODdDZWRGTm9HTlVNWmVKUGVsbUNyTTBmLTVlTWhpcjJTOGNQcEwzOUNpZllOT1BvcTQwNHB4Mkk?oc=5",
+    "pub": "2026-11-27T00:33:02+00:00"
    }
   ],
   "IT": [
-   {
-    "h": "신세계아이앤씨, AI 기술 혁신 성과 인정…과기정통부 장관상 수상",
-    "src": "지디넷코리아",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE83WEJFSXNvamhra3pGRkdHblc0MkgwcjVkVGNkQk5YV1VPZVlIMlIzQmFwNjdnYURwcWZGbThSRjV0SXV5UUpDVW15UXlNNzROZzV4dlJn?oc=5",
-    "pub": "2026-11-26T05:09:38+00:00"
-   },
-   {
-    "h": "과학기술정보통신부, 제5회 K-디지털 그랜드 챔피언십 개최… 대한민국 대표 인공지능 창업 초기 기업 발굴·육성",
-    "src": "한경일보",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4xN1lET2I0bHhROWRkVU9tYzAtN2xOc0I3dlIwUFU2bnk4ZVpvRTY2dTN6ZnM0bzg2bXhYeFZlQURsa2RPMVAzWTFra1pzSzlPc3JZNm1CYlJnOVFwb2RiZVN1TS1ia1k?oc=5",
-    "pub": "2026-11-27T12:20:07+00:00"
-   },
    {
     "h": "&#x27;칩&#x27; 넘어 &#x27;소프트웨어&#x27;까지…아마존, 데카르트 기술 인수 나선 이유",
     "src": "블로터",
@@ -211,6 +199,18 @@
     "src": "디지털경제뉴스",
     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE4zTU9DZ21wMTVnVnJqT1NUcHg3VXRKcDhIbzUwbkxWTUZLSWkyUi1hcTQwbnlscXFZUjdLWEU5eDdiNkZlSWdqUVdJWktsTXhaRUNHN1NqMHFBUEtiWTkwU2VBZl9IRDdUcGc?oc=5",
     "pub": "2026-11-27T02:59:15+00:00"
+   },
+   {
+    "h": "신세계아이앤씨, AI 기술 혁신 성과 인정…과기정통부 장관상 수상",
+    "src": "지디넷코리아",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE83WEJFSXNvamhra3pGRkdHblc0MkgwcjVkVGNkQk5YV1VPZVlIMlIzQmFwNjdnYURwcWZGbThSRjV0SXV5UUpDVW15UXlNNzROZzV4dlJn?oc=5",
+    "pub": "2026-11-26T05:09:38+00:00"
+   },
+   {
+    "h": "과학기술정보통신부, 제5회 K-디지털 그랜드 챔피언십 개최… 대한민국 대표 인공지능 창업 초기 기업 발굴·육성",
+    "src": "한경일보",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4xN1lET2I0bHhROWRkVU9tYzAtN2xOc0I3dlIwUFU2bnk4ZVpvRTY2dTN6ZnM0bzg2bXhYeFZlQURsa2RPMVAzWTFra1pzSzlPc3JZNm1CYlJnOVFwb2RiZVN1TS1ia1k?oc=5",
+    "pub": "2026-11-27T12:20:07+00:00"
    },
    {
     "h": "송광헌 피씨엔 대표, 행안부 장관상 수상 ··· AI 기술 혁신으로 IT 발전 기여",
@@ -257,10 +257,34 @@
     "pub": "2026-11-25T05:06:44+00:00"
    },
    {
-    "h": "중앙탑고, 2026 충청북도교육감배 사제동행 학교스포츠클럽 배구대회 남녀 동반 우승 : 네이버 블로그",
-    "src": "Naver Blog",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdkhnMVZOR2dkazhxOW92NUpMUHIwb2ZZSXVVM2hDd3JuVWswd0h4Y3dGZVpFbmlHTXVyRWZKRWk0c0NaR19PdHVVZ2YxWXNxQmVoOHRMMFRyS3ZXRDdodUI2VG81NTNCaTI2ekRUNEtYN3d2QTc2NTNaYzZMVFdoNHFaVEhYT2o4dGhiQ2N6dw?oc=5",
-    "pub": "2026-11-27T17:54:38+00:00"
+    "h": "레인지로버 스포츠 국내 온라인 한정 에디션 2종 출시",
+    "src": "오토뷰",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9MOVFjSElfYUhEZzkwYkNiMGNPQ3RONE5XNEZxMjdWNl9WTlQ5VzlBTUxTdWJ1OWhJLXZzUjN2OUNrOHlHaDc4cDlqNFFESURIMEFOenlYS0I2QjRN?oc=5",
+    "pub": "2026-11-26T02:42:00+00:00"
+   },
+   {
+    "h": "제주이음스포츠클럽-신성여자고등학교, 학교체육 활성화 맞손",
+    "src": "헤드라인제주",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE45aWNMMERjaHRQRzNTVXRWc0NJUjZ4UDB6eGRLR0NtbDVXM2t4ejJfZnJNVDdpVDRFY2FuWFN2UlUxU1UxenZtNEFpaVpGSFQ5YnY1ZHlIeXdFdWJ2RlFFUTdYdF92WnZKOFc4Um1WQ3ZOX28?oc=5",
+    "pub": "2026-11-25T07:39:56+00:00"
+   },
+   {
+    "h": "LG헬로비전 시청자, tvN스포츠·투니버스 볼 수 있다",
+    "src": "미디어오늘",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBjM2JmR0tGMVpua2MzYXVfa3F2VmxDanlzYm84OFpYdkp0WUxlLThmZFdSQ0NDY1hxai10bVZkUFJnZy1mVGtneUJJU0F6anUwVTBkUXh6N3hLTEE4NHo3RlhMeWpKbEE2elh6LThXU04?oc=5",
+    "pub": "2026-11-26T00:36:37+00:00"
+   },
+   {
+    "h": "‘2026 이스포츠 대학리그’ 전국결선 개막…부산서 캠퍼스 최강자 가린다",
+    "src": "경향게임스",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1UV09zSXRQNmROaDZPVFo3SjZaNEJmOHNjWHhnYUJrUFdPUFZKTVp1UGpOMHc0Njk0cHFmZFFmem56M3R0TVRxNGlmUmlsWGVjYmIwOGVMLUJ0Sy1SYTMzM1FZakloU2FlZzM1VA?oc=5",
+    "pub": "2026-11-28T02:59:32+00:00"
+   },
+   {
+    "h": "[ST포토] 미녀 당구선수 권발해 &#x27;이국적인 미모&#x27;",
+    "src": "네이트",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE85Q0RNTG1obUhlbFJsMUhwNWFzSFFwQVRDaDdxRjVvX3c2cUxRX2g0OUZ2aU1uVVlTSmp3LWZfZTEwVlBwY21HN3cyQnY0MWRFTVpIb0t3?oc=5",
+    "pub": "2026-11-25T07:15:00+00:00"
    },
    {
     "h": "[스포츠 영상] 유벤투스 캄비아소, 완벽한 궤적의 중거리슛",
@@ -269,46 +293,22 @@
     "pub": "2026-11-27T11:39:42+00:00"
    },
    {
-    "h": "대한민국이 걸어온 스포츠의 발자취! &#x27;국립스포츠박물관&#x27;에서 느껴보세요",
-    "src": "서울시청",
-    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1GTGFzYUQ3VjM5c2pFT0RRTFowdEc3T3dBRDltY3FOSWFONDFSa3BhTENlX2ZSWDVXMzRYOHlnNHB6SEdtY19KaWs0cXkxc2k4RHk4RjFrcmM?oc=5",
-    "pub": "2026-11-27T04:00:00+00:00"
-   },
-   {
     "h": "MBN 여성스포츠대상 10월 MVP에 전국체전 4관왕 체조 여서정",
     "src": "연합뉴스",
     "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1uRmVQZXRYSWZRWGhMTjZqZmJ0cnF6c0cwNHduQzRVbUpzdXVFTVhEbUF0dnkyZmFkZGNqYVNzX0FMQkZGcGlOZ1M2UjFranM5U2Z0N1YtRHdPTm_SAWBBVV95cUxQSW5Qa2UtVEZ4d3hfRTlsMl9NdkJJWkhYNmtIbl9QU1laajV3YXEtbVBqUkxCcWJNbmR6Vms2cTE5S0xtX1FlbFFrQlkxbmdCODlIZllMSTlTMXVDV0QzUEw?oc=5",
     "pub": "2026-11-27T01:55:46+00:00"
    },
    {
-    "h": "김연경 예능 또 통했다…시즌 넘어 쌓이는 스포츠 서사",
-    "src": "연합뉴스TV",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1hcTNSdllyalU5TkdxWFd5VFZsTW91N0ZCR1FoTEkzbnh1c21jUjVSOXB3aUtOOEdTMFhHVFVsSWhoLWc3cER2LUpJMzI5MTE5R3gzendZNG1WOTcxcHlhcnhSZk5xOWs?oc=5",
-    "pub": "2026-11-28T02:32:00+00:00"
-   },
-   {
-    "h": "e스포츠 대학리그 전국결선 28일 부산서 개막",
-    "src": "국민일보",
-    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1Od2NoVm55VzRiUEl6N29DVEhxaHB0SHBFM1ZCdzNkbXFCdmhlc2xFbUFCME92S0N0dlpjV18yb2pGUTVZcnhXQXFrNU5RYnc1X0ZuMEZKVTI?oc=5",
-    "pub": "2026-11-28T03:19:20+00:00"
-   },
-   {
-    "h": "부산 동래구 청소년센터, 연제구와 e스포츠 지역대항전 개최",
-    "src": "국제신문",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQU5MY1ZhX09ibWNlUmRWU1gteG0yQTNVWGd4VWJad0NqUk9jYkJZbnpKZ21lYnVSMVU4TXNwOHdDRDBnNldaSEhfSm5HZ2dheW04TWZTbWhXLTgyWFZQR3JzTTBLbTc2YmlGMGtISFE5TkFDak1DanRrMVdjY1BEek91aExVeW8zYllIZVBR?oc=5",
-    "pub": "2026-11-27T07:23:00+00:00"
-   },
-   {
-    "h": "부상·부진 겪은 김하성, 디트로이트서 2027시즌 맞는다",
+    "h": "포천교육지원청·경기도체육회, RAS 체육교육 활성화 협약…스포츠박스 연계",
     "src": "국제뉴스",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4xZ0EyaHJrQVVncWVjZFctZmxjS0t0dGM5RmJuSXhGQlNlS2tUNEhVVVVZYXZTS2VxdFFjRS1LWlJvSVNVUDg4Rl9BTGhpcmpzeHlzbUxBZkxWb1pRRDdtbkVqbFhYRGFKbmVOTGRB?oc=5",
-    "pub": "2026-11-28T02:50:26+00:00"
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBINGFVQXo0Ml9KblgtS1k1RWdlcHRqNjRpZXdyZTJtSjlMS2l1ZElBVHU3VmVyZzM1T1gzWXNqTldoS2x1MkNYcFNQQUR4ZHNmR0o2SVhWUmM3T2FrUEY1NzN1T25PQ2ltd01naUh3?oc=5",
+    "pub": "2026-11-27T07:43:31+00:00"
    },
    {
-    "h": "체육공단, &#x27;스포츠테크 통합 네트워킹 데이&#x27;…32개사 협력 도모",
-    "src": "한국경제",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9vbGI4b0NMT2I1RFlkN25hbk1TeUJ2RFA0bjM4OXpKNFRQenl2dGZrUW0ya25FNDRhU0pMZC01ajQ0ZGt1cDhaeTBVV05SajVrMXpoX0RyeUI5Zw?oc=5",
-    "pub": "2026-11-27T04:23:41+00:00"
+    "h": "경북체육회 이준오 주임, 전국 지정스포츠클럽 우수성과 공유대회 ‘대상’",
+    "src": "프레시안",
+    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1PMWc1dzg1NGlVVERGLXgzbnhSa2dFbHo0QUZLSFNNbW5zM3QxQVNmNWc4b0dHSFdSWlR2ZkRxejBydFBSQjliUXpPMGxXYm13Tm1YZ0lYbnlyTFJfWHhCVVpZbjk5cENfVkYw?oc=5",
+    "pub": "2026-11-27T06:01:47+00:00"
    }
   ]
  }
